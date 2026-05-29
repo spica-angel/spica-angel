@@ -18,96 +18,132 @@ box-sizing:border-box;
 
 body{
 font-family:'Zen Old Mincho',serif;
-background:linear-gradient(
-180deg,
-#14052f 0%,
-#2b0f63 50%,
-#4e2993 100%
-);
 color:white;
 text-align:center;
+
+background-image:url('F86F91D5-5636-4D37-A123-309F41103E65.png');
+background-size:cover;
+background-position:center top;
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-color:#1b0d3a;
 }
 
-.hero{
-padding:50px 20px;
+.container{
+width:90%;
+max-width:900px;
+margin:auto;
+padding:50px 0;
 }
 
-.hero img{
-width:95%;
-max-width:650px;
-border-radius:30px;
-box-shadow:0 0 40px rgba(220,184,255,.4);
+.hero-img{
+width:100%;
+max-width:700px;
+border-radius:35px;
+box-shadow:0 0 40px rgba(255,255,255,.25);
 }
 
 h1{
+font-size:4rem;
+margin-top:35px;
+text-shadow:0 0 25px #dcb8ff;
+}
+
+.english{
+letter-spacing:8px;
+margin-top:15px;
+opacity:.85;
+font-size:1rem;
+}
+
+.star{
 font-size:3rem;
-margin-top:30px;
+margin:35px 0;
+color:#e8c6ff;
+text-shadow:0 0 20px #e8c6ff;
+}
+
+.welcome{
+font-size:1.3rem;
+line-height:2;
+margin-bottom:80px;
+}
+
+.section{
+margin:80px 0;
+}
+
+.section h2{
+font-size:3rem;
+margin-bottom:40px;
 text-shadow:0 0 20px #dcb8ff;
 }
 
-.sub{
-font-size:1.15rem;
-line-height:2;
-margin-top:20px;
-opacity:.9;
+.profile{
+font-size:1.2rem;
+line-height:2.5;
 }
 
-.links{
-padding:50px 20px 80px;
-}
-
-.section-title{
-font-size:2rem;
-margin-bottom:35px;
-text-shadow:0 0 15px #dcb8ff;
+.line{
+width:60%;
+height:1px;
+background:rgba(255,255,255,.25);
+margin:60px auto;
 }
 
 .link-btn{
 display:block;
-width:90%;
-max-width:600px;
-margin:18px auto;
-padding:22px;
+width:100%;
+max-width:700px;
 
-color:white;
+margin:22px auto;
+padding:24px;
+
 text-decoration:none;
-font-size:1.15rem;
+color:white;
+font-size:1.3rem;
 
-background:rgba(255,255,255,.08);
+background:rgba(140,90,255,.22);
 
-border:1px solid rgba(255,255,255,.15);
+border:1px solid rgba(255,255,255,.18);
 
 border-radius:999px;
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(15px);
 
 box-shadow:
-0 0 20px rgba(220,184,255,.15);
+0 0 25px rgba(180,120,255,.25);
 
 transition:.3s;
 }
 
 .link-btn:hover{
 transform:translateY(-4px);
-background:rgba(220,184,255,.18);
-
-box-shadow:
-0 0 30px rgba(220,184,255,.35);
-}
-
-.profile{
-max-width:700px;
-margin:0 auto 60px;
-padding:0 25px;
-line-height:2;
-font-size:1rem;
-opacity:.9;
+background:rgba(180,120,255,.35);
+box-shadow:0 0 35px rgba(220,184,255,.45);
 }
 
 .footer{
-padding:40px;
-opacity:.5;
-font-size:.9rem;
+margin-top:100px;
+padding-bottom:40px;
+opacity:.6;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:3rem;
+}
+
+.section h2{
+font-size:2.2rem;
+}
+
+.profile{
+font-size:1.05rem;
+line-height:2.2;
+}
+
 }
 
 </style>
@@ -115,64 +151,74 @@ font-size:.9rem;
 
 <body>
 
-<section class="hero">
+<div class="container">
 
-<img src="41383BA2-9C07-4669-87AD-F716BA318C6E.png">
+<img class="hero-img" src="41383BA2-9C07-4669-87AD-F716BA318C6E.png">
 
 <h1>星鏡スピカ</h1>
 
-<div class="sub">
+<div class="english">
+HOSHIGANE SPICA
+</div>
+
+<div class="star">✦</div>
+
+<div class="welcome">
 ちょい悪天使VTuber<br>
 ラムズのみんな、ようこそ
 </div>
 
-</section>
+<div class="section">
+
+<h2>PROFILE</h2>
 
 <div class="profile">
-
 配信・歌・ゲーム・雑談を中心に活動中。<br><br>
 
 少し意地悪で、少し甘やかす。<br><br>
 
 そんな「ちょい悪天使VTuber」<br>
 星鏡スピカです。
+</div>
 
 </div>
 
-<section class="links">
+<div class="line"></div>
 
-<div class="section-title">
-LINK
-</div>
+<div class="section">
+
+<h2>LINK</h2>
 
 <a class="link-btn" href="https://youtube.com/@spica_hoshigane" target="_blank">
-YouTube
+▶ YouTube
 </a>
 
 <a class="link-btn" href="https://web.iriam.app/s/user/QAHoReYrJj?uuid=af8f1df2" target="_blank">
-IRIAM
+🎤 IRIAM
 </a>
 
 <a class="link-btn" href="https://x.com/hoshigane_spica" target="_blank">
-X
+✦ X
 </a>
 
 <a class="link-btn" href="https://www.tiktok.com/@hoshigane_spica" target="_blank">
-TikTok
+🎵 TikTok
 </a>
 
 <a class="link-btn" href="https://hoshiganespica.booth.pm/" target="_blank">
-BOOTH
+🛍 BOOTH
 </a>
 
 <a class="link-btn" href="https://marshmallow-qa.com/wcor8kzzwjwskmo" target="_blank">
-Marshmallow
+💌 Marshmallow
 </a>
 
-</section>
+</div>
 
 <div class="footer">
 © Hoshigane Spica
+</div>
+
 </div>
 
 </body>
