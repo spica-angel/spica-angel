@@ -40,7 +40,7 @@ body{
 
 background:
 linear-gradient(
-rgba(10,5,30,.25),
+rgba(10,5,30,.20),
 rgba(40,20,80,.45)
 ),
 url('EE552393-4A35-41CD-9C75-CDD9386DEA1C.png');
@@ -79,7 +79,7 @@ background-attachment:fixed;
 .container{
 
 width:92%;
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 padding:40px 0 80px;
 
@@ -87,15 +87,15 @@ padding:40px 0 80px;
 
 .hero-img{
 
-width:95%;
-max-width:620px;
+width:100%;
+max-width:680px;
 
 display:block;
 margin:auto;
 
 filter:
-drop-shadow(0 0 40px rgba(255,255,255,.9))
-drop-shadow(0 0 120px rgba(220,184,255,.8));
+drop-shadow(0 0 60px rgba(255,255,255,.95))
+drop-shadow(0 0 160px rgba(220,184,255,.95));
 
 animation:float 4s ease-in-out infinite;
 
@@ -131,14 +131,16 @@ text-shadow:
 
 h1{
 
-font-size:4.8rem;
+font-size:4.5rem;
+
+line-height:1.1;
 
 margin-top:20px;
 
 text-shadow:
 0 0 15px #fff,
-0 0 35px #dcb8ff,
-0 0 60px #dcb8ff;
+0 0 45px #dcb8ff,
+0 0 90px #dcb8ff;
 
 animation:titleGlow 4s infinite;
 
@@ -151,12 +153,11 @@ opacity:1;
 }
 
 50%{
-opacity:.8;
+opacity:.85;
 }
 
 }
-
-.english{
+  .english{
 
 letter-spacing:10px;
 font-size:1.1rem;
@@ -201,20 +202,20 @@ margin-bottom:70px;
 
 .section{
 
-background:rgba(120,80,200,.15);
+background:rgba(120,80,200,.12);
 
-backdrop-filter:blur(18px);
+backdrop-filter:blur(25px);
 
-border:1px solid rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.08);
 
-border-radius:40px;
+border-radius:35px;
 
-padding:60px 30px;
+padding:45px 25px;
 
-margin:70px auto;
+margin:50px auto;
 
 box-shadow:
-0 0 45px rgba(220,184,255,.15);
+0 0 60px rgba(220,184,255,.18);
 
 }
 
@@ -278,7 +279,7 @@ box-shadow:
 0 0 60px rgba(220,184,255,.8);
 
 }
-.link-btn{
+  .link-btn{
 
 display:block;
 
@@ -330,7 +331,11 @@ opacity:.75;
 @media(max-width:768px){
 
 h1{
-font-size:3.8rem;
+font-size:3.4rem;
+}
+
+.hero-img{
+max-width:520px;
 }
 
 .section h2{
@@ -405,7 +410,6 @@ HOSHIGANE SPICA
 </audio>
 
 </div>
-
 <div class="section">
 
 <h2>LINK</h2>
@@ -449,11 +453,12 @@ target="_blank">
 </div>
 
 <div class="footer">
+
 © Hoshigane Spica
-</div>
 
 </div>
 
+</div>
 <script>
 
 const bgm =
@@ -485,4 +490,5 @@ btn.innerHTML =
 </script>
 
 </body>
+
 </html>
