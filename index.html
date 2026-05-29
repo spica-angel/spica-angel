@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>星鏡スピカ</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
@@ -20,24 +21,50 @@ font-family:'Zen Old Mincho',serif;
 color:white;
 text-align:center;
 overflow-x:hidden;
+background-color:#17092f;
+}
 
+/* スマホ背景 */
+@media(max-width:768px){
+
+body{
 background:
 linear-gradient(
-rgba(10,5,35,.15),
-rgba(35,15,70,.35)
+rgba(12,5,35,.2),
+rgba(35,15,70,.4)
 ),
-url('F86F91D5-5636-4D37-A123-309F41103E65.png');
+url('EE552393-4A35-41CD-9C75-CDD9386DEA1C.png');
 
 background-size:cover;
 background-position:center top;
 background-repeat:no-repeat;
 background-attachment:fixed;
-background-color:#180933;
+}
+
+}
+
+/* PC背景 */
+@media(min-width:769px){
+
+body{
+background:
+linear-gradient(
+rgba(12,5,35,.15),
+rgba(35,15,70,.35)
+),
+url('4CDB24F9-160D-43C4-B7E4-F9BCB2CE237A.png');
+
+background-size:cover;
+background-position:center center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+}
+
 }
 
 .container{
 width:90%;
-max-width:900px;
+max-width:1100px;
 margin:auto;
 padding:40px 0 80px;
 }
@@ -46,7 +73,7 @@ padding:40px 0 80px;
 width:90%;
 max-width:520px;
 display:block;
-margin:0 auto;
+margin:auto;
 
 filter:
 drop-shadow(0 0 45px rgba(255,255,255,.9))
@@ -56,142 +83,218 @@ animation:float 4s ease-in-out infinite;
 }
 
 @keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
 }
 
 .agency{
-margin-top:20px;
-font-size:.95rem;
+
+margin-top:15px;
+
+font-size:1rem;
+
 letter-spacing:5px;
-color:#f4dfff;
-text-shadow:0 0 15px #dcb8ff;
+
+color:#f3d8ff;
+
+text-shadow:
+0 0 10px #fff,
+0 0 25px #dcb8ff;
+
 }
 
 h1{
+
 font-size:4rem;
-margin-top:15px;
+
+margin-top:20px;
 
 text-shadow:
-0 0 15px #ffffff,
-0 0 30px #dcb8ff,
-0 0 60px #dcb8ff,
-0 0 90px #dcb8ff;
+0 0 15px #fff,
+0 0 35px #dcb8ff,
+0 0 60px #dcb8ff;
+
 }
 
 .english{
-letter-spacing:8px;
-margin-top:10px;
-opacity:.9;
+
+margin-top:15px;
+
 font-size:1.1rem;
+
+letter-spacing:10px;
+
+opacity:.9;
+
 }
 
 .star{
+
 font-size:3rem;
-margin:35px 0;
-color:#f0d6ff;
-text-shadow:0 0 25px #e8c6ff;
+
+margin:40px 0;
+
+text-shadow:
+0 0 20px #fff,
+0 0 40px #dcb8ff;
+
 }
 
 .welcome{
-font-size:1.35rem;
+
+font-size:1.4rem;
+
 line-height:2;
-margin-bottom:70px;
-text-shadow:0 0 15px rgba(255,255,255,.4);
+
+margin-bottom:60px;
+
 }
 
 .section{
-margin:60px 0;
+
 background:rgba(120,80,200,.15);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.12);
-border-radius:35px;
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.1);
+
+border-radius:40px;
+
 padding:50px 25px;
-box-shadow:0 0 40px rgba(220,184,255,.15);
+
+margin:60px auto;
+
+box-shadow:
+0 0 40px rgba(220,184,255,.12);
+
 }
 
 .section h2{
-font-size:2.5rem;
-margin-bottom:35px;
-text-shadow:0 0 20px #dcb8ff;
+
+font-size:3rem;
+
+margin-bottom:40px;
+
+text-shadow:
+0 0 15px #fff,
+0 0 30px #dcb8ff;
+
 }
 
 .profile{
+
 font-size:1.15rem;
-line-height:2.5;
+
+line-height:2.6;
+
 }
 
 .music-box{
-margin:60px auto;
+
+margin:50px auto;
+
 }
 
 #musicBtn{
-padding:22px 50px;
-background:rgba(130,90,220,.35);
-border:1px solid rgba(255,255,255,.15);
-border-radius:999px;
-color:white;
-font-size:1.1rem;
+
+padding:22px 60px;
+
+font-size:1.15rem;
+
 font-family:'Zen Old Mincho',serif;
+
+color:white;
+
+background:rgba(130,90,220,.35);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:999px;
+
 backdrop-filter:blur(15px);
 
 box-shadow:
-0 0 30px rgba(220,184,255,.4);
+0 0 35px rgba(220,184,255,.45);
 
 cursor:pointer;
+
 transition:.3s;
+
 }
 
 #musicBtn:hover{
-transform:translateY(-4px);
-box-shadow:0 0 50px rgba(220,184,255,.8);
+
+transform:translateY(-5px);
+
+box-shadow:
+0 0 50px rgba(220,184,255,.8);
+
 }
 
 .link-btn{
+
 display:block;
-width:100%;
+
 max-width:700px;
-margin:22px auto;
+
+margin:20px auto;
+
 padding:26px;
 
 text-decoration:none;
+
 color:white;
+
 font-size:1.3rem;
 
-background:rgba(140,90,255,.22);
+background:rgba(150,100,255,.22);
 
 border:1px solid rgba(255,255,255,.15);
 
 border-radius:999px;
 
-backdrop-filter:blur(15px);
-
-box-shadow:
-0 0 25px rgba(180,120,255,.2);
+backdrop-filter:blur(18px);
 
 transition:.3s;
+
 }
 
 .link-btn:hover{
+
 transform:translateY(-5px);
-background:rgba(180,120,255,.3);
-box-shadow:0 0 45px rgba(220,184,255,.6);
+
+background:rgba(180,120,255,.35);
+
+box-shadow:
+0 0 45px rgba(220,184,255,.5);
+
 }
 
 .footer{
+
 margin-top:80px;
-padding-bottom:40px;
+
 opacity:.7;
+
+padding-bottom:40px;
+
 }
 
 @media(max-width:768px){
 
 h1{
-font-size:2.9rem;
+font-size:3rem;
 }
 
 .section h2{
-font-size:2rem;
+font-size:2.2rem;
 }
 
 .profile{
@@ -249,7 +352,7 @@ HOSHIGANE SPICA
 ✦ STARLIGHT MUSIC ✦
 </button>
 
-<audio id="bgm" loop preload="auto">
+<audio id="bgm" loop>
 <source src="bgm.mp3" type="audio/mpeg">
 </audio>
 
@@ -259,29 +362,17 @@ HOSHIGANE SPICA
 
 <h2>LINK</h2>
 
-<a class="link-btn" href="https://youtube.com/@spica_hoshigane" target="_blank">
-▶ YouTube
-</a>
+<a class="link-btn" href="https://youtube.com/@spica_hoshigane" target="_blank">▶ YouTube</a>
 
-<a class="link-btn" href="https://web.iriam.app/s/user/QAHoReYrJj?uuid=af8f1df2" target="_blank">
-🎤 IRIAM
-</a>
+<a class="link-btn" href="https://web.iriam.app/s/user/QAHoReYrJj?uuid=af8f1df2" target="_blank">🎤 IRIAM</a>
 
-<a class="link-btn" href="https://x.com/hoshigane_spica" target="_blank">
-✦ X
-</a>
+<a class="link-btn" href="https://x.com/hoshigane_spica" target="_blank">✦ X</a>
 
-<a class="link-btn" href="https://www.tiktok.com/@hoshigane_spica" target="_blank">
-🎵 TikTok
-</a>
+<a class="link-btn" href="https://www.tiktok.com/@hoshigane_spica" target="_blank">🎵 TikTok</a>
 
-<a class="link-btn" href="https://hoshiganespica.booth.pm/" target="_blank">
-🛍 BOOTH
-</a>
+<a class="link-btn" href="https://hoshiganespica.booth.pm/" target="_blank">🛍 BOOTH</a>
 
-<a class="link-btn" href="https://marshmallow-qa.com/wcor8kzzwjwskmo" target="_blank">
-💌 Marshmallow
-</a>
+<a class="link-btn" href="https://marshmallow-qa.com/wcor8kzzwjwskmo" target="_blank">💌 Marshmallow</a>
 
 </div>
 
@@ -293,20 +384,20 @@ HOSHIGANE SPICA
 
 <script>
 
-const bgm = document.getElementById("bgm");
-const btn = document.getElementById("musicBtn");
+const bgm=document.getElementById('bgm');
+const btn=document.getElementById('musicBtn');
 
 function toggleMusic(){
 
 if(bgm.paused){
 
 bgm.play();
-btn.innerHTML = "✦ MUSIC STOP ✦";
+btn.innerHTML='✦ MUSIC STOP ✦';
 
 }else{
 
 bgm.pause();
-btn.innerHTML = "✦ STARLIGHT MUSIC ✦";
+btn.innerHTML='✦ STARLIGHT MUSIC ✦';
 
 }
 
