@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 
 <meta charset="UTF-8">
@@ -34,7 +33,7 @@ position:relative;
 
 }
 
-/* 背景ぼかし */
+/* 背景 */
 
 body::before{
 
@@ -100,7 +99,6 @@ background-repeat:no-repeat;
 
 .container{
 
-width:100%;
 max-width:1000px;
 margin:auto;
 
@@ -112,12 +110,11 @@ position:relative;
 
 text-align:center;
 
-padding-top:70px;
+padding-top:80px;
 padding-bottom:120px;
 
 }
-
-/* 神々しいオーラ */
+  /* 神々しいオーラ */
 
 .hero::before{
 
@@ -126,7 +123,7 @@ content:"";
 position:absolute;
 
 left:50%;
-top:120px;
+top:80px;
 
 transform:translateX(-50%);
 
@@ -136,9 +133,9 @@ height:700px;
 background:
 radial-gradient(
 circle,
-rgba(220,184,255,.35) 0%,
-rgba(220,184,255,.15) 35%,
-transparent 70%
+rgba(220,184,255,.18) 0%,
+rgba(220,184,255,.08) 40%,
+transparent 75%
 );
 
 pointer-events:none;
@@ -164,23 +161,32 @@ opacity:1;
 
 }
 
+/* キャラ */
+
 .character{
+
+position:relative;
+z-index:10;
+
+display:block;
 
 width:85%;
 max-width:580px;
 
+margin:0 auto;
+
 filter:
-drop-shadow(0 0 40px rgba(255,255,255,1))
-drop-shadow(0 0 100px rgba(220,184,255,1))
-drop-shadow(0 0 180px rgba(180,120,255,.95))
-drop-shadow(0 0 280px rgba(180,120,255,.75));
+drop-shadow(0 0 30px rgba(255,255,255,1))
+drop-shadow(0 0 80px rgba(220,184,255,1))
+drop-shadow(0 0 160px rgba(180,120,255,.9));
 
 animation:
 floatCharacter 5s ease-in-out infinite,
 divineGlow 6s ease-in-out infinite;
 
 }
-  @keyframes floatCharacter{
+
+@keyframes floatCharacter{
 
 0%,100%{
 transform:translateY(0px);
@@ -197,20 +203,18 @@ transform:translateY(-18px);
 0%,100%{
 
 filter:
-drop-shadow(0 0 40px rgba(255,255,255,1))
-drop-shadow(0 0 100px rgba(220,184,255,1))
-drop-shadow(0 0 180px rgba(180,120,255,.95))
-drop-shadow(0 0 280px rgba(180,120,255,.75));
+drop-shadow(0 0 30px rgba(255,255,255,1))
+drop-shadow(0 0 80px rgba(220,184,255,1))
+drop-shadow(0 0 160px rgba(180,120,255,.9));
 
 }
 
 50%{
 
 filter:
-drop-shadow(0 0 70px rgba(255,255,255,1))
-drop-shadow(0 0 160px rgba(220,184,255,1))
-drop-shadow(0 0 280px rgba(180,120,255,1))
-drop-shadow(0 0 420px rgba(180,120,255,.95));
+drop-shadow(0 0 50px rgba(255,255,255,1))
+drop-shadow(0 0 120px rgba(220,184,255,1))
+drop-shadow(0 0 240px rgba(180,120,255,1));
 
 }
 
@@ -218,17 +222,16 @@ drop-shadow(0 0 420px rgba(180,120,255,.95));
 
 .affiliation{
 
-margin-top:25px;
+margin-top:20px;
 
 font-size:22px;
 
 letter-spacing:8px;
 
-color:rgba(255,255,255,.85);
+color:rgba(255,255,255,.9);
 
 }
-
-.name{
+  .name{
 
 font-size:clamp(56px,9vw,110px);
 
@@ -279,22 +282,20 @@ font-size:28px;
 
 letter-spacing:10px;
 
-color:rgba(255,255,255,.95);
-
 }
 
 .star{
 
 font-size:90px;
 
-margin:70px 0;
+margin:60px 0;
+
+text-shadow:
+0 0 20px white,
+0 0 60px #d8b6ff;
 
 animation:
 floatStar 4s ease-in-out infinite;
-
-text-shadow:
-0 0 25px white,
-0 0 60px #d8b6ff;
 
 }
 
@@ -317,7 +318,7 @@ font-size:42px;
 margin-bottom:40px;
 
 text-shadow:
-0 0 15px rgba(255,255,255,.8);
+0 0 20px rgba(255,255,255,.8);
 
 }
 
@@ -328,13 +329,16 @@ font-size:34px;
 margin-bottom:100px;
 
 }
-  .card{
 
-padding:60px;
+/* ガラスカード */
+
+.card{
 
 margin:50px 20px;
 
-border-radius:45px;
+padding:60px;
+
+border-radius:40px;
 
 background:
 linear-gradient(
@@ -350,19 +354,16 @@ border:
 1px solid rgba(255,255,255,.15);
 
 box-shadow:
-0 8px 32px rgba(0,0,0,.25),
-inset 0 1px 1px rgba(255,255,255,.2),
 0 0 60px rgba(220,184,255,.25);
 
 }
-
-.section-title{
+  .section-title{
 
 text-align:center;
 
 font-size:70px;
 
-margin-bottom:60px;
+margin-bottom:50px;
 
 text-shadow:
 0 0 20px white,
@@ -426,19 +427,17 @@ cursor:pointer;
 background:
 linear-gradient(
 135deg,
-rgba(255,255,255,.14),
+rgba(255,255,255,.15),
 rgba(255,255,255,.05)
 );
 
 backdrop-filter:blur(20px);
--webkit-backdrop-filter:blur(20px);
 
 border:
 1px solid rgba(255,255,255,.15);
 
 box-shadow:
-0 0 50px rgba(220,184,255,.25),
-inset 0 1px 1px rgba(255,255,255,.2);
+0 0 60px rgba(220,184,255,.25);
 
 transition:.4s;
 
@@ -449,17 +448,17 @@ transition:.4s;
 transform:translateY(-4px);
 
 box-shadow:
-0 0 90px rgba(220,184,255,.55),
-inset 0 1px 1px rgba(255,255,255,.3);
+0 0 100px rgba(220,184,255,.6);
 
 }
-  .link-btn{
+
+.link-btn{
 
 display:block;
 
 width:85%;
 
-margin:25px auto;
+margin:22px auto;
 
 padding:28px;
 
@@ -480,15 +479,11 @@ rgba(255,255,255,.12),
 rgba(255,255,255,.04)
 );
 
-backdrop-filter:blur(20px);
--webkit-backdrop-filter:blur(20px);
-
 border:
 1px solid rgba(255,255,255,.12);
 
 box-shadow:
-0 0 35px rgba(210,180,255,.18),
-inset 0 1px 1px rgba(255,255,255,.15);
+0 0 40px rgba(220,184,255,.18);
 
 transition:.4s;
 
@@ -499,8 +494,7 @@ transition:.4s;
 transform:translateY(-4px);
 
 box-shadow:
-0 0 80px rgba(220,190,255,.45),
-inset 0 1px 1px rgba(255,255,255,.25);
+0 0 80px rgba(220,184,255,.45);
 
 }
 
@@ -522,45 +516,17 @@ font-size:34px;
 
 margin-bottom:25px;
 
-text-shadow:
-0 0 15px rgba(255,255,255,.7);
-
 }
 
 @media(max-width:768px){
 
-.affiliation{
-font-size:14px;
-letter-spacing:4px;
-}
-
-.name{
-font-size:56px;
-}
-
-.roman{
-font-size:14px;
-letter-spacing:4px;
-}
-
-.star{
-font-size:60px;
-}
-
-.catchcopy{
-font-size:24px;
-}
-
-.welcome{
-font-size:20px;
-}
+.name{font-size:56px;}
+.roman{font-size:14px;}
+.catchcopy{font-size:24px;}
+.welcome{font-size:20px;}
 
 .card{
 padding:35px 20px;
-}
-
-.section-title{
-font-size:40px;
 }
 
 .profile-text{
@@ -579,14 +545,6 @@ padding:24px;
 .link-btn{
 font-size:18px;
 padding:22px;
-}
-
-.footer{
-font-size:16px;
-}
-
-.footer-title{
-font-size:24px;
 }
 
 }
@@ -628,7 +586,6 @@ HOSHIGANE SPICA
 </div>
 
 </section>
-
 <section class="card">
 
 <h2 class="section-title">
@@ -662,7 +619,6 @@ PROFILE
 </div>
 
 </section>
-<div class="music-area">
 
 <button
 id="musicBtn"
@@ -673,72 +629,50 @@ onclick="toggleMusic()">
 
 </button>
 
-<audio
-id="bgm"
-loop>
-
-<source
-src="bgm.mp3"
-type="audio/mpeg">
-
+<audio id="bgm" loop>
+<source src="bgm.mp3" type="audio/mpeg">
 </audio>
-
-</div>
 
 <section class="card">
 
 <h2 class="section-title">
-
 LINK
-
 </h2>
 
 <a class="link-btn"
 href="https://youtube.com/@spica_hoshigane"
 target="_blank">
-
 ▶ YouTube
-
 </a>
 
 <a class="link-btn"
 href="https://web.iriam.app/s/user/QAHoReYrJj?uuid=af8f1df2"
 target="_blank">
-
 🎤 IRIAM
-
 </a>
 
 <a class="link-btn"
 href="https://x.com/hoshigane_spica"
 target="_blank">
-
 ✦ X
-
 </a>
 
 <a class="link-btn"
 href="https://www.tiktok.com/@hoshigane_spica"
 target="_blank">
-
 🎵 TikTok
-
 </a>
 
 <a class="link-btn"
 href="https://hoshiganespica.booth.pm/"
 target="_blank">
-
 🛍 BOOTH
-
 </a>
 
 <a class="link-btn"
 href="https://marshmallow-qa.com/wcor8kzzwjwskmo"
 target="_blank">
-
 💌 Marshmallow
-
 </a>
 
 </section>
@@ -746,9 +680,7 @@ target="_blank">
 <footer class="footer">
 
 <div class="footer-title">
-
 ✦ Thank you Lambs ✦
-
 </div>
 
 <div>
@@ -777,11 +709,8 @@ May the stars guide your way.
 
 <script>
 
-const bgm =
-document.getElementById("bgm");
-
-const btn =
-document.getElementById("musicBtn");
+const bgm = document.getElementById("bgm");
+const btn = document.getElementById("musicBtn");
 
 function toggleMusic(){
 
@@ -789,27 +718,13 @@ if(bgm.paused){
 
 bgm.play();
 
-btn.innerHTML =
-"✦ MUSIC STOP ✦";
-
-btn.style.boxShadow =
-"0 0 120px rgba(220,184,255,1)";
-
-btn.style.transform =
-"scale(1.05)";
+btn.innerHTML = "✦ MUSIC STOP ✦";
 
 }else{
 
 bgm.pause();
 
-btn.innerHTML =
-"✦ STARLIGHT MUSIC ✦";
-
-btn.style.boxShadow =
-"0 0 50px rgba(220,184,255,.25)";
-
-btn.style.transform =
-"scale(1)";
+btn.innerHTML = "✦ STARLIGHT MUSIC ✦";
 
 }
 
@@ -818,5 +733,4 @@ btn.style.transform =
 </script>
 
 </body>
-
 </html>
