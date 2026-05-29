@@ -23,8 +23,8 @@ text-align:center;
 
 background:
 linear-gradient(
-rgba(20,10,60,.35),
-rgba(40,20,90,.45)
+rgba(10,5,35,.25),
+rgba(35,15,70,.45)
 ),
 url('F86F91D5-5636-4D37-A123-309F41103E65.png');
 
@@ -32,127 +32,134 @@ background-size:cover;
 background-position:center top;
 background-repeat:no-repeat;
 background-attachment:fixed;
-background-color:#1b0d3a;
+background-color:#180933;
 }
 
 .container{
 width:90%;
 max-width:900px;
 margin:auto;
-padding:40px 0;
+padding:40px 0 80px;
 }
 
 .hero-img{
 width:90%;
-max-width:500px;
+max-width:520px;
 display:block;
 margin:0 auto;
 
 filter:
-drop-shadow(0 0 25px rgba(255,220,255,.7))
-drop-shadow(0 0 50px rgba(220,184,255,.5));
+drop-shadow(0 0 30px rgba(255,220,255,.8))
+drop-shadow(0 0 60px rgba(220,184,255,.5));
+
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
 }
 
 .agency{
+margin-top:20px;
 font-size:.9rem;
 letter-spacing:4px;
-color:#e8c6ff;
-margin-top:25px;
-opacity:.9;
+color:#f0d6ff;
 }
 
 h1{
 font-size:4rem;
 margin-top:15px;
-text-shadow:0 0 25px #dcb8ff;
+text-shadow:0 0 30px #dcb8ff;
 }
 
 .english{
 letter-spacing:8px;
 margin-top:10px;
 opacity:.85;
-font-size:1rem;
 }
 
 .star{
 font-size:3rem;
-margin:30px 0;
-color:#e8c6ff;
-text-shadow:0 0 20px #e8c6ff;
+margin:35px 0;
+color:#f0d6ff;
+text-shadow:0 0 25px #e8c6ff;
 }
 
 .welcome{
-font-size:1.25rem;
+font-size:1.3rem;
 line-height:2;
-margin-bottom:60px;
-}
-
-.section{
-margin:70px 0;
-}
-
-.section h2{
-font-size:2.2rem;
-margin-bottom:30px;
-text-shadow:0 0 20px #dcb8ff;
-}
-
-.profile{
-font-size:1.1rem;
-line-height:2.3;
-max-width:700px;
-margin:auto;
+margin-bottom:70px;
 }
 
 .line{
 width:60%;
 height:1px;
-background:rgba(255,255,255,.25);
-margin:50px auto;
-}
-
-.music-box{
+background:rgba(255,255,255,.2);
 margin:60px auto;
 }
 
+.section{
+margin:80px 0;
+}
+
+.section h2{
+font-size:3rem;
+margin-bottom:40px;
+text-shadow:0 0 20px #dcb8ff;
+}
+
+.profile{
+font-size:1.15rem;
+line-height:2.5;
+}
+
+.music-box{
+margin:70px auto;
+}
+
 #musicBtn{
+padding:20px 45px;
+
 background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.18);
+
+border:1px solid rgba(255,255,255,.2);
+
 border-radius:999px;
 
-padding:18px 40px;
-
 color:white;
-font-family:'Zen Old Mincho',serif;
 font-size:1rem;
+font-family:'Zen Old Mincho',serif;
 
-backdrop-filter:blur(12px);
+backdrop-filter:blur(15px);
 
 box-shadow:
-0 0 20px rgba(220,184,255,.3);
+0 0 30px rgba(220,184,255,.4);
 
 cursor:pointer;
+
 transition:.3s;
 }
 
 #musicBtn:hover{
-transform:translateY(-3px);
+transform:translateY(-4px);
 
 box-shadow:
-0 0 35px rgba(220,184,255,.6);
+0 0 40px rgba(220,184,255,.8);
 }
 
 .link-btn{
 display:block;
+
 width:100%;
 max-width:700px;
 
 margin:22px auto;
-padding:22px;
+padding:24px;
 
 text-decoration:none;
 color:white;
-font-size:1.2rem;
+font-size:1.3rem;
 
 background:rgba(255,255,255,.08);
 
@@ -170,15 +177,15 @@ transition:.3s;
 
 .link-btn:hover{
 transform:translateY(-4px);
+
 background:rgba(180,120,255,.2);
 
 box-shadow:
-0 0 35px rgba(220,184,255,.45);
+0 0 40px rgba(220,184,255,.6);
 }
 
 .footer{
-margin-top:80px;
-padding-bottom:40px;
+margin-top:90px;
 opacity:.6;
 }
 
@@ -189,11 +196,12 @@ font-size:2.8rem;
 }
 
 .section h2{
-font-size:1.8rem;
+font-size:2rem;
 }
 
 .profile{
 font-size:1rem;
+line-height:2.2;
 }
 
 }
@@ -207,7 +215,9 @@ font-size:1rem;
 
 <img class="hero-img" src="IMG_5845.png">
 
-<p class="agency">✦ LOCUS MEUS 所属 ✦</p>
+<div class="agency">
+✦ LOCUS MEUS 所属 ✦
+</div>
 
 <h1>星鏡スピカ</h1>
 
@@ -247,8 +257,8 @@ HOSHIGANE SPICA
 ✦ 星空BGMを聴く ✦
 </button>
 
-<audio id="bgm" loop>
-<source src="星鏡スピカbgm7.mp3" type="audio/mpeg">
+<audio id="bgm" loop preload="auto">
+<source src="bgm.mp3" type="audio/mpeg">
 </audio>
 
 </div>
@@ -299,11 +309,17 @@ const btn = document.getElementById("musicBtn");
 function toggleMusic(){
 
 if(bgm.paused){
+
 bgm.play();
+
 btn.innerHTML = "✦ BGM停止 ✦";
+
 }else{
+
 bgm.pause();
+
 btn.innerHTML = "✦ 星空BGMを聴く ✦";
+
 }
 
 }
