@@ -21,7 +21,13 @@ font-family:'Zen Old Mincho',serif;
 color:white;
 text-align:center;
 
-background-image:url('F86F91D5-5636-4D37-A123-309F41103E65.png');
+background:
+linear-gradient(
+rgba(20,10,60,.35),
+rgba(40,20,90,.45)
+),
+url('F86F91D5-5636-4D37-A123-309F41103E65.png');
+
 background-size:cover;
 background-position:center top;
 background-repeat:no-repeat;
@@ -33,62 +39,107 @@ background-color:#1b0d3a;
 width:90%;
 max-width:900px;
 margin:auto;
-padding:50px 0;
+padding:40px 0;
 }
 
 .hero-img{
-width:100%;
-max-width:700px;
-border-radius:35px;
-box-shadow:0 0 40px rgba(255,255,255,.25);
+width:90%;
+max-width:500px;
+display:block;
+margin:0 auto;
+
+filter:
+drop-shadow(0 0 25px rgba(255,220,255,.7))
+drop-shadow(0 0 50px rgba(220,184,255,.5));
+}
+
+.agency{
+font-size:.9rem;
+letter-spacing:4px;
+color:#e8c6ff;
+margin-top:25px;
+opacity:.9;
 }
 
 h1{
 font-size:4rem;
-margin-top:35px;
+margin-top:15px;
 text-shadow:0 0 25px #dcb8ff;
 }
 
 .english{
 letter-spacing:8px;
-margin-top:15px;
+margin-top:10px;
 opacity:.85;
 font-size:1rem;
 }
 
 .star{
 font-size:3rem;
-margin:35px 0;
+margin:30px 0;
 color:#e8c6ff;
 text-shadow:0 0 20px #e8c6ff;
 }
 
 .welcome{
-font-size:1.3rem;
+font-size:1.25rem;
 line-height:2;
-margin-bottom:80px;
+margin-bottom:60px;
 }
 
 .section{
-margin:80px 0;
+margin:70px 0;
 }
 
 .section h2{
-font-size:3rem;
-margin-bottom:40px;
+font-size:2.2rem;
+margin-bottom:30px;
 text-shadow:0 0 20px #dcb8ff;
 }
 
 .profile{
-font-size:1.2rem;
-line-height:2.5;
+font-size:1.1rem;
+line-height:2.3;
+max-width:700px;
+margin:auto;
 }
 
 .line{
 width:60%;
 height:1px;
 background:rgba(255,255,255,.25);
+margin:50px auto;
+}
+
+.music-box{
 margin:60px auto;
+}
+
+#musicBtn{
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.18);
+border-radius:999px;
+
+padding:18px 40px;
+
+color:white;
+font-family:'Zen Old Mincho',serif;
+font-size:1rem;
+
+backdrop-filter:blur(12px);
+
+box-shadow:
+0 0 20px rgba(220,184,255,.3);
+
+cursor:pointer;
+transition:.3s;
+}
+
+#musicBtn:hover{
+transform:translateY(-3px);
+
+box-shadow:
+0 0 35px rgba(220,184,255,.6);
 }
 
 .link-btn{
@@ -97,13 +148,13 @@ width:100%;
 max-width:700px;
 
 margin:22px auto;
-padding:24px;
+padding:22px;
 
 text-decoration:none;
 color:white;
-font-size:1.3rem;
+font-size:1.2rem;
 
-background:rgba(140,90,255,.22);
+background:rgba(255,255,255,.08);
 
 border:1px solid rgba(255,255,255,.18);
 
@@ -119,12 +170,14 @@ transition:.3s;
 
 .link-btn:hover{
 transform:translateY(-4px);
-background:rgba(180,120,255,.35);
-box-shadow:0 0 35px rgba(220,184,255,.45);
+background:rgba(180,120,255,.2);
+
+box-shadow:
+0 0 35px rgba(220,184,255,.45);
 }
 
 .footer{
-margin-top:100px;
+margin-top:80px;
 padding-bottom:40px;
 opacity:.6;
 }
@@ -132,16 +185,15 @@ opacity:.6;
 @media(max-width:768px){
 
 h1{
-font-size:3rem;
+font-size:2.8rem;
 }
 
 .section h2{
-font-size:2.2rem;
+font-size:1.8rem;
 }
 
 .profile{
-font-size:1.05rem;
-line-height:2.2;
+font-size:1rem;
 }
 
 }
@@ -153,7 +205,9 @@ line-height:2.2;
 
 <div class="container">
 
-<img class="hero-img" src="41383BA2-9C07-4669-87AD-F716BA318C6E.png">
+<img class="hero-img" src="IMG_5845.png">
+
+<p class="agency">✦ LOCUS MEUS 所属 ✦</p>
 
 <h1>星鏡スピカ</h1>
 
@@ -173,13 +227,29 @@ HOSHIGANE SPICA
 <h2>PROFILE</h2>
 
 <div class="profile">
+
 配信・歌・ゲーム・雑談を中心に活動中。<br><br>
 
 少し意地悪で、少し甘やかす。<br><br>
 
 そんな「ちょい悪天使VTuber」<br>
 星鏡スピカです。
+
 </div>
+
+</div>
+
+<div class="line"></div>
+
+<div class="music-box">
+
+<button id="musicBtn" onclick="toggleMusic()">
+✦ 星空BGMを聴く ✦
+</button>
+
+<audio id="bgm" loop>
+<source src="星鏡スピカbgm7.mp3" type="audio/mpeg">
+</audio>
 
 </div>
 
@@ -220,6 +290,25 @@ HOSHIGANE SPICA
 </div>
 
 </div>
+
+<script>
+
+const bgm = document.getElementById("bgm");
+const btn = document.getElementById("musicBtn");
+
+function toggleMusic(){
+
+if(bgm.paused){
+bgm.play();
+btn.innerHTML = "✦ BGM停止 ✦";
+}else{
+bgm.pause();
+btn.innerHTML = "✦ 星空BGMを聴く ✦";
+}
+
+}
+
+</script>
 
 </body>
 </html>
