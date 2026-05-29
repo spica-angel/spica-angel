@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>星鏡スピカ</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -24,389 +21,400 @@ scroll-behavior:smooth;
 
 body{
 
-font-family:'Zen Old Mincho',serif;
+font-family:
+"Times New Roman",
+serif;
+
 color:white;
+
+background:
+linear-gradient(
+rgba(8,8,30,.25),
+rgba(45,15,80,.35)
+),
+url('haikei.PNG');
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
 overflow-x:hidden;
-text-align:center;
-background-color:#120727;
-
-}
-
-/* スマホ背景 */
-
-@media(max-width:768px){
-
-body{
-
-background-image:
-linear-gradient(
-rgba(15,5,35,.30),
-rgba(55,20,95,.45)
-),
-url('EE552393-4A35-41CD-9C75-CDD9386DEA1C.png');
-
-background-size:cover;
-background-position:center top;
-background-repeat:no-repeat;
-background-attachment:fixed;
-
-}
-
-}
-
-/* PC背景 */
-
-@media(min-width:769px){
-
-body{
-
-background-image:
-linear-gradient(
-rgba(15,5,35,.20),
-rgba(55,20,95,.35)
-),
-url('4CDB24F9-160D-43C4-B7E4-F9BCB2CE237A.png');
-
-background-size:cover;
-background-position:center center;
-background-repeat:no-repeat;
-background-attachment:fixed;
-
-}
 
 }
 
 .container{
 
-width:92%;
-max-width:1200px;
+width:100%;
+max-width:1000px;
 margin:auto;
 
 }
-  .hero{
 
-padding-top:40px;
-padding-bottom:100px;
+.hero{
+
+text-align:center;
+padding-top:70px;
+padding-bottom:120px;
 
 }
 
-.avatar{
+.character{
 
-width:100%;
+width:85%;
 max-width:520px;
 
-display:block;
-margin:auto;
-
 filter:
-drop-shadow(0 0 50px rgba(255,255,255,.9))
-drop-shadow(0 0 120px rgba(220,184,255,.7));
-
-animation:float 5s ease-in-out infinite;
+drop-shadow(0 0 40px rgba(255,255,255,.25));
 
 }
 
-@keyframes float{
+.affiliation{
 
-0%,100%{
+margin-top:25px;
+
+font-size:22px;
+letter-spacing:8px;
+
+color:rgba(255,255,255,.8);
+
+}
+
+.name{
+
+font-size:clamp(56px,9vw,110px);
+
+margin-top:25px;
+
+font-weight:700;
+
+text-shadow:
+0 0 15px #fff,
+0 0 35px #d8b6ff,
+0 0 70px #b37eff;
+
+}
+
+.roman{
+
+margin-top:20px;
+
+font-size:28px;
+
+letter-spacing:10px;
+
+color:rgba(255,255,255,.9);
+
+}
+
+.star{
+
+font-size:90px;
+
+margin:70px 0;
+
+animation:
+floatStar 4s ease-in-out infinite;
+
+text-shadow:
+0 0 20px white,
+0 0 50px #d8b6ff;
+
+}
+
+@keyframes floatStar{
+
+0%{
 transform:translateY(0px);
 }
 
 50%{
-transform:translateY(-12px);
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
 }
 
 }
 
-.guild{
+.catchcopy{
 
-margin-top:15px;
+font-size:42px;
 
-font-size:1rem;
+margin-bottom:40px;
 
-letter-spacing:5px;
+text-shadow:
+0 0 15px rgba(255,255,255,.8);
 
-color:#f4dfff;
+}
+
+.welcome{
+
+font-size:34px;
+
+margin-bottom:100px;
+
+}
+
+.card{
+  padding:60px;
+
+margin:50px 20px;
+
+border-radius:45px;
+
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.15),
+rgba(255,255,255,.05)
+);
+
+backdrop-filter:blur(30px);
+-webkit-backdrop-filter:blur(30px);
+
+border:
+1px solid rgba(255,255,255,.15);
+
+box-shadow:
+0 8px 32px rgba(0,0,0,.25),
+inset 0 1px 1px rgba(255,255,255,.2),
+0 0 50px rgba(200,160,255,.15);
+
+}
+
+.section-title{
+
+text-align:center;
+
+font-size:70px;
+
+margin-bottom:60px;
+
+text-shadow:
+0 0 20px white,
+0 0 40px #d8b6ff;
+
+}
+
+.profile-text{
+
+text-align:center;
+
+font-size:34px;
+
+line-height:2.4;
+
+}
+
+.divider{
+
+width:80%;
+
+height:1px;
+
+margin:50px auto;
+
+background:
+rgba(255,255,255,.15);
+
+}
+
+.fanname{
+
+text-align:center;
+
+font-size:34px;
+
+line-height:2;
+
+}
+
+.music-btn{
+
+display:block;
+
+width:85%;
+
+margin:70px auto;
+
+padding:35px;
+
+font-size:32px;
+
+border:none;
+
+border-radius:999px;
+
+cursor:pointer;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.12),
+rgba(255,255,255,.04)
+);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(255,255,255,.12);
+
+box-shadow:
+0 0 35px rgba(210,180,255,.18),
+inset 0 1px 1px rgba(255,255,255,.15);
+
+transition:.4s;
+
+}
+  .music-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 0 60px rgba(220,190,255,.35),
+inset 0 1px 1px rgba(255,255,255,.25);
+
+}
+
+.link-btn{
+
+display:block;
+
+width:85%;
+
+margin:25px auto;
+
+padding:28px;
+
+text-decoration:none;
+
+text-align:center;
+
+font-size:28px;
+
+color:white;
+
+border-radius:999px;
+
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.12),
+rgba(255,255,255,.04)
+);
+
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(255,255,255,.12);
+
+box-shadow:
+0 0 35px rgba(210,180,255,.18),
+inset 0 1px 1px rgba(255,255,255,.15);
+
+transition:.4s;
+
+}
+
+.link-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 0 60px rgba(220,190,255,.35),
+inset 0 1px 1px rgba(255,255,255,.25);
+
+}
+
+.footer{
+
+text-align:center;
+
+padding:120px 20px 60px;
+
+line-height:2.2;
+
+font-size:24px;
+
+}
+
+.footer-title{
+
+font-size:34px;
+
+margin-bottom:25px;
 
 text-shadow:
 0 0 15px rgba(255,255,255,.7);
 
 }
 
-.hero h1{
+@media(max-width:768px){
 
-font-size:clamp(3rem,8vw,6rem);
+.affiliation{
+font-size:14px;
+letter-spacing:4px;
+}
 
-margin-top:25px;
-
-text-shadow:
-0 0 20px #fff,
-0 0 60px #dcb8ff,
-0 0 120px #dcb8ff;
-
+.name{
+font-size:56px;
 }
 
 .roman{
-
-margin-top:15px;
-
-letter-spacing:8px;
-
-opacity:.9;
-
-font-size:.95rem;
-
+font-size:14px;
+letter-spacing:4px;
 }
 
 .star{
-
-font-size:3rem;
-
-margin:40px 0;
-
-text-shadow:
-0 0 25px white,
-0 0 50px #dcb8ff;
-
+font-size:60px;
 }
 
-.catch{
-
-font-size:1.4rem;
-
-letter-spacing:3px;
-
-opacity:.95;
-
-text-shadow:
-0 0 15px rgba(255,255,255,.6);
-
+.catchcopy{
+font-size:24px;
 }
 
 .welcome{
-
-margin-top:25px;
-
-font-size:1.2rem;
-
-line-height:2;
-
-}
-  .card{
-
-background:rgba(95,65,170,.18);
-
-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,255,255,.10);
-
-border-radius:40px;
-
-padding:60px 30px;
-
-margin:70px auto;
-
-max-width:900px;
-
-box-shadow:
-0 0 40px rgba(220,184,255,.15);
-
-}
-
-.card h2{
-
-font-size:3rem;
-
-margin-bottom:50px;
-
-text-shadow:
-0 0 20px white,
-0 0 50px #dcb8ff;
-
-}
-
-.card p{
-
-font-size:1.15rem;
-
-line-height:2.3;
-
-margin-bottom:25px;
-
-}
-
-.fanbox{
-
-margin-top:50px;
-
-padding-top:40px;
-
-border-top:
-1px solid rgba(255,255,255,.15);
-
-}
-
-.fanbox h3{
-
-font-size:1.6rem;
-
-margin-bottom:25px;
-
-letter-spacing:3px;
-
-}
-
-.fanbox p{
-
-margin-bottom:12px;
-
-}
-  .music-area{
-
-margin:90px auto;
-
-}
-
-#musicBtn{
-
-display:inline-block;
-
-padding:32px 90px;
-
-border:none;
-
-border-radius:999px;
-
-background:
-linear-gradient(
-135deg,
-rgba(180,120,255,.45),
-rgba(120,80,220,.30)
-);
-
-color:white;
-
-font-family:'Zen Old Mincho',serif;
-
-font-size:1.4rem;
-
-cursor:pointer;
-
-box-shadow:
-0 0 50px rgba(220,184,255,.35);
-
-transition:.3s;
-
-}
-
-#musicBtn:hover{
-
-transform:translateY(-5px);
-
-box-shadow:
-0 0 80px rgba(220,184,255,.8);
-
-}
-
-.link-btn{
-
-display:block;
-
-max-width:700px;
-
-margin:22px auto;
-
-padding:24px;
-
-text-decoration:none;
-
-color:white;
-
-font-size:1.2rem;
-
-border-radius:999px;
-
-background:
-linear-gradient(
-135deg,
-rgba(180,120,255,.30),
-rgba(120,80,220,.20)
-);
-
-border:1px solid rgba(255,255,255,.10);
-
-backdrop-filter:blur(15px);
-
-transition:.3s;
-
-}
-
-.link-btn:hover{
-
-transform:translateY(-5px);
-
-box-shadow:
-0 0 60px rgba(220,184,255,.7);
-
-}
-  footer{
-
-margin-top:100px;
-
-padding-bottom:60px;
-
-line-height:2.2;
-
-opacity:.9;
-
-}
-
-footer .thanks{
-
-font-size:1.3rem;
-
-margin-bottom:20px;
-
-text-shadow:
-0 0 15px rgba(255,255,255,.6);
-
-}
-
-@media(max-width:768px){
-
-.avatar{
-max-width:460px;
-}
-
-.hero{
-padding-bottom:70px;
+font-size:20px;
 }
 
 .card{
-padding:45px 22px;
+padding:35px 20px;
 }
 
-.card h2{
-font-size:2.3rem;
+.section-title{
+font-size:40px;
 }
 
-.card p{
-font-size:1rem;
-line-height:2.2;
+.profile-text{
+font-size:18px;
 }
 
-.catch{
-font-size:1.15rem;
+.fanname{
+font-size:22px;
 }
-
-#musicBtn{
-padding:24px 45px;
-font-size:1.1rem;
+  .music-btn{
+font-size:20px;
+padding:24px;
 }
 
 .link-btn{
-font-size:1.05rem;
+font-size:18px;
 padding:22px;
+}
+
+.footer{
+font-size:16px;
+}
+
+.footer-title{
+font-size:24px;
 }
 
 }
@@ -421,93 +429,126 @@ padding:22px;
 
 <section class="hero">
 
-<img src="IMG_5845.png" class="avatar">
+<img
+src="IMG_5845.png"
+class="character">
 
-<p class="guild">
+<div class="affiliation">
+
 ✦ LOCUS MEUS 所属 ✦
-</p>
 
-<h1>星鏡スピカ</h1>
+</div>
 
-<p class="roman">
+<h1 class="name">
+
+星鏡スピカ
+
+</h1>
+
+<div class="roman">
+
 HOSHIGANE SPICA
-</p>
 
-<div class="star">✦</div>
+</div>
 
-<p class="catch">
+<div class="star">
+
+✦
+
+</div>
+
+<div class="catchcopy">
+
 ✦ Angel VTuber ✦
-</p>
 
-<p class="welcome">
+</div>
+
+<div class="welcome">
+
 ラムズのみんな、ようこそ
-</p>
-
-</section>
-<section class="card">
-
-<h2>PROFILE</h2>
-
-<p>
-星々の光に導かれながら、
-歌・雑談・ゲームを届ける天使VTuber。
-</p>
-
-<p>
-少しおっちょこちょいで、
-少し甘やかし上手。
-</p>
-
-<p>
-ラムズのみんなが安心して帰ってこられる場所を
-今日も作っています。
-</p>
-
-<div class="fanbox">
-
-<h3>
-✦ FAN NAME ✦
-</h3>
-
-<p>
-ラムズ
-</p>
-
-<p>
-#鏡の中のスピカ
-</p>
-
-<p>
-#MirrorOfSpica
-</p>
 
 </div>
 
 </section>
 
-<div class="music-area">
+<section class="card">
 
-<button id="musicBtn"
+<h2 class="section-title">
+
+PROFILE
+
+</h2>
+
+<div class="profile-text">
+
+星々の光に導かれながら、<br>
+
+歌・雑談・ゲームを届ける天使VTuber。
+
+<br><br>
+
+少しおっちょこちょいで、<br>
+
+少し甘やかし上手。
+
+<br><br>
+
+ラムズのみんなが安心して帰ってこられる場所を<br>
+
+今日も作っています。
+
+</div>
+<div class="divider"></div>
+
+<div class="fanname">
+
+✦ FAN NAME ✦
+
+<br><br>
+
+ラムズ
+
+<br><br>
+
+#鏡の中のスピカ
+
+<br>
+
+#MirrorOfSpica
+
+</div>
+
+</section>
+
+<button
+id="musicBtn"
+class="music-btn"
 onclick="toggleMusic()">
 
 ✦ STARLIGHT MUSIC ✦
 
 </button>
 
-<audio id="bgm" loop>
+<audio
+id="bgm"
+loop>
 
-<source src="bgm.mp3"
+<source
+src="bgm.mp3"
 type="audio/mpeg">
 
 </audio>
 
-</div>
-
 <section class="card">
 
-<h2>LINK</h2>
+<h2 class="section-title">
 
-<a class="link-btn"
+LINK
+
+</h2>
+
+<a
+class="link-btn"
 href="https://youtube.com/@spica_hoshigane"
 target="_blank">
 
@@ -515,7 +556,8 @@ target="_blank">
 
 </a>
 
-<a class="link-btn"
+<a
+class="link-btn"
 href="https://web.iriam.app/s/user/QAHoReYrJj?uuid=af8f1df2"
 target="_blank">
 
@@ -523,14 +565,16 @@ target="_blank">
 
 </a>
 
-<a class="link-btn"
+<a
+class="link-btn"
 href="https://x.com/hoshigane_spica"
 target="_blank">
 
 ✦ X
 
 </a>
-<a class="link-btn"
+<a
+class="link-btn"
 href="https://www.tiktok.com/@hoshigane_spica"
 target="_blank">
 
@@ -538,7 +582,8 @@ target="_blank">
 
 </a>
 
-<a class="link-btn"
+<a
+class="link-btn"
 href="https://hoshiganespica.booth.pm/"
 target="_blank">
 
@@ -546,7 +591,8 @@ target="_blank">
 
 </a>
 
-<a class="link-btn"
+<a
+class="link-btn"
 href="https://marshmallow-qa.com/wcor8kzzwjwskmo"
 target="_blank">
 
@@ -556,9 +602,9 @@ target="_blank">
 
 </section>
 
-<footer>
+<footer class="footer">
 
-<div class="thanks">
+<div class="footer-title">
 
 ✦ Thank you Lambs ✦
 
@@ -584,18 +630,7 @@ May the stars guide your way.
 
 </div>
 
-<br>
-
-<div>
-
-© Hoshigane Spica
-
-</div>
-
 </footer>
-
-</div>
-
 <script>
 
 const bgm =
@@ -614,7 +649,10 @@ btn.innerHTML =
 "✦ MUSIC STOP ✦";
 
 btn.style.boxShadow =
-"0 0 90px rgba(220,184,255,1)";
+"0 0 100px rgba(220,184,255,1)";
+
+btn.style.transform =
+"scale(1.03)";
 
 }else{
 
@@ -624,14 +662,54 @@ btn.innerHTML =
 "✦ STARLIGHT MUSIC ✦";
 
 btn.style.boxShadow =
-"0 0 50px rgba(220,184,255,.35)";
+"0 0 35px rgba(210,180,255,.18)";
+
+btn.style.transform =
+"scale(1)";
 
 }
 
 }
 
 </script>
+<script>
 
-</body>
+const bgm =
+document.getElementById("bgm");
 
-</html>
+const btn =
+document.getElementById("musicBtn");
+
+function toggleMusic(){
+
+if(bgm.paused){
+
+bgm.play();
+
+btn.innerHTML =
+"✦ MUSIC STOP ✦";
+
+btn.style.boxShadow =
+"0 0 100px rgba(220,184,255,1)";
+
+btn.style.transform =
+"scale(1.03)";
+
+}else{
+
+bgm.pause();
+
+btn.innerHTML =
+"✦ STARLIGHT MUSIC ✦";
+
+btn.style.boxShadow =
+"0 0 35px rgba(210,180,255,.18)";
+
+btn.style.transform =
+"scale(1)";
+
+}
+
+}
+
+</script>
