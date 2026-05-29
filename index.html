@@ -76,28 +76,156 @@ background-attachment:fixed;
 
 }
 
+/* ローディング */
+
+#loading-screen{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:#120727;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+z-index:99999;
+
+}
+
+.loading-logo{
+
+font-size:2rem;
+
+letter-spacing:5px;
+
+color:white;
+
+text-shadow:
+0 0 15px #fff,
+0 0 35px #dcb8ff;
+
+}
+
+.loading-text{
+
+margin-top:20px;
+
+letter-spacing:4px;
+
+opacity:.8;
+
+}
+
+/* 流れ星 */
+
+.shooting-star{
+
+position:fixed;
+
+width:140px;
+height:2px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+white
+);
+
+pointer-events:none;
+
+z-index:1;
+
+opacity:.7;
+
+}
+
+.star1{
+top:15%;
+left:-10%;
+animation:shoot1 8s linear infinite;
+}
+
+.star2{
+top:35%;
+left:-10%;
+animation:shoot2 12s linear infinite;
+}
+
+.star3{
+top:55%;
+left:-10%;
+animation:shoot3 10s linear infinite;
+}
+
+@keyframes shoot1{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(1800px,600px);
+}
+
+}
+
+@keyframes shoot2{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(1800px,500px);
+}
+
+}
+
+@keyframes shoot3{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(1800px,700px);
+}
+
+}
+
 .container{
 
 width:92%;
 max-width:1200px;
+
 margin:auto;
+
 padding:40px 0 100px;
 
 }
-
-.hero-img{
+  .hero-img{
 
 width:100%;
-max-width:580px;
+max-width:560px;
 
 display:block;
 margin:auto;
 
 filter:
-drop-shadow(0 0 50px rgba(255,255,255,.9))
-drop-shadow(0 0 120px rgba(220,184,255,.9));
+drop-shadow(0 0 60px rgba(255,255,255,.95))
+drop-shadow(0 0 160px rgba(220,184,255,.95));
 
 animation:float 5s ease-in-out infinite;
+
+position:relative;
+z-index:5;
 
 }
 
@@ -108,7 +236,7 @@ transform:translateY(0);
 }
 
 50%{
-transform:translateY(-15px);
+transform:translateY(-18px);
 }
 
 }
@@ -131,14 +259,30 @@ text-shadow:
 
 h1{
 
-font-size:4.8rem;
+font-size:5rem;
 
 margin-top:20px;
 
 text-shadow:
 0 0 15px #fff,
-0 0 40px #dcb8ff,
-0 0 90px #dcb8ff;
+0 0 45px #dcb8ff,
+0 0 100px #dcb8ff;
+
+animation:titleGlow 4s infinite;
+
+}
+
+@keyframes titleGlow{
+
+0%,100%{
+opacity:1;
+filter:brightness(1);
+}
+
+50%{
+opacity:.9;
+filter:brightness(1.2);
+}
 
 }
 
@@ -150,7 +294,8 @@ font-size:1.1rem;
 opacity:.95;
 
 }
-  .star{
+
+.star{
 
 font-size:4rem;
 
@@ -171,7 +316,7 @@ transform:scale(1);
 }
 
 50%{
-transform:scale(1.15);
+transform:scale(1.2);
 }
 
 }
@@ -197,28 +342,38 @@ border:1px solid rgba(255,255,255,.08);
 
 border-radius:40px;
 
-padding:70px 30px;
+padding:60px 30px;
 
 margin:60px auto;
 
 box-shadow:
-0 0 60px rgba(220,184,255,.18);
+0 0 70px rgba(220,184,255,.18);
+
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+
+}
+
+.section.show{
+
+opacity:1;
+transform:translateY(0);
 
 }
 
 .section h2{
 
-font-size:3.3rem;
+font-size:3rem;
 
-margin-bottom:55px;
+margin-bottom:50px;
 
 text-shadow:
 0 0 15px #fff,
 0 0 35px #dcb8ff;
 
 }
-
-.profile{
+  .profile{
 
 font-size:1.2rem;
 line-height:3.2;
@@ -227,7 +382,7 @@ line-height:3.2;
 
 .music-box{
 
-margin:80px auto;
+margin:90px auto;
 
 }
 
@@ -261,6 +416,46 @@ cursor:pointer;
 
 transition:.35s;
 
+position:relative;
+overflow:hidden;
+
+}
+
+#musicBtn::before{
+
+content:"";
+
+position:absolute;
+top:0;
+left:-150%;
+
+width:80%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.5),
+transparent
+);
+
+transform:skewX(-20deg);
+
+}
+
+#musicBtn:hover::before{
+
+animation:shine 1.2s;
+
+}
+
+@keyframes shine{
+
+100%{
+left:180%;
+}
+
 }
 
 #musicBtn:hover{
@@ -269,6 +464,24 @@ transform:translateY(-5px);
 
 box-shadow:
 0 0 80px rgba(220,184,255,.9);
+
+}
+
+.fan-name{
+
+margin-top:30px;
+font-size:1.1rem;
+letter-spacing:3px;
+
+}
+
+.hashtag{
+
+margin-top:20px;
+
+opacity:.85;
+
+line-height:2;
 
 }
   .link-btn{
@@ -305,6 +518,39 @@ box-shadow:
 
 transition:.35s;
 
+position:relative;
+overflow:hidden;
+
+}
+
+.link-btn::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-150%;
+
+width:80%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.45),
+transparent
+);
+
+transform:skewX(-20deg);
+
+}
+
+.link-btn:hover::before{
+
+animation:shine 1.2s;
+
 }
 
 .link-btn:hover{
@@ -325,20 +571,22 @@ box-shadow:
 
 .footer{
 
-margin-top:100px;
+margin-top:120px;
 
-padding-bottom:40px;
+padding-bottom:50px;
 
 font-size:1.1rem;
 
-opacity:.8;
+opacity:.85;
+
+line-height:2.2;
 
 }
 
 @media(max-width:768px){
 
 h1{
-font-size:3.5rem;
+font-size:3.7rem;
 }
 
 .hero-img{
@@ -371,6 +619,22 @@ font-size:1.1rem;
 
 <body>
 
+<div id="loading-screen">
+
+<div class="loading-logo">
+✦ Hoshigane Spica ✦
+</div>
+
+<div class="loading-text">
+Loading...
+</div>
+
+</div>
+
+<div class="shooting-star star1"></div>
+<div class="shooting-star star2"></div>
+<div class="shooting-star star3"></div>
+
 <div class="container">
 
 <img class="hero-img" src="IMG_5845.png">
@@ -391,7 +655,6 @@ HOSHIGANE SPICA
 ちょい悪天使VTuber<br>
 ラムズのみんな、ようこそ
 </div>
-
 <div class="section">
 
 <h2>PROFILE</h2>
@@ -402,10 +665,24 @@ HOSHIGANE SPICA
 
 少し意地悪で、少し甘やかす。<br><br>
 
-歌、雑談、ゲーム配信を中心に活動する。<br><br>
+歌・雑談・ゲーム配信を中心に活動する。<br><br>
 
 ちょい悪天使VTuber<br>
 星鏡スピカです。
+
+</div>
+
+<div class="fan-name">
+
+✦ FAN NAME ✦<br>
+ラムズ
+
+</div>
+
+<div class="hashtag">
+
+#鏡の中のスピカ<br>
+#MirrorOfSpica
 
 </div>
 
@@ -417,54 +694,45 @@ HOSHIGANE SPICA
 ✦ STARLIGHT MUSIC ✦
 </button>
 
-<audio id="bgm" loop>
+<audio id="bgm" loop preload="auto">
 <source src="bgm.mp3" type="audio/mpeg">
 </audio>
 
 </div>
+
 <div class="section">
 
 <h2>LINK</h2>
 
-<a class="link-btn"
-href="https://youtube.com/@spica_hoshigane"
-target="_blank">
+<a class="link-btn" href="https://youtube.com/@spica_hoshigane" target="_blank">
 ▶ YouTube
 </a>
 
-<a class="link-btn"
-href="https://web.iriam.app/s/user/QAHoReYrJj?uuid=af8f1df2"
-target="_blank">
+<a class="link-btn" href="https://web.iriam.app/s/user/QAHoReYrJj?uuid=af8f1df2" target="_blank">
 🎤 IRIAM
 </a>
 
-<a class="link-btn"
-href="https://x.com/hoshigane_spica"
-target="_blank">
+<a class="link-btn" href="https://x.com/hoshigane_spica" target="_blank">
 ✦ X
 </a>
 
-<a class="link-btn"
-href="https://www.tiktok.com/@hoshigane_spica"
-target="_blank">
+<a class="link-btn" href="https://www.tiktok.com/@hoshigane_spica" target="_blank">
 🎵 TikTok
 </a>
 
-<a class="link-btn"
-href="https://hoshiganespica.booth.pm/"
-target="_blank">
+<a class="link-btn" href="https://hoshiganespica.booth.pm/" target="_blank">
 🛍 BOOTH
 </a>
 
-<a class="link-btn"
-href="https://marshmallow-qa.com/wcor8kzzwjwskmo"
-target="_blank">
+<a class="link-btn" href="https://marshmallow-qa.com/wcor8kzzwjwskmo" target="_blank">
 💌 Marshmallow
 </a>
 
 </div>
 
 <div class="footer">
+
+✦ Thank you Lambs ✦<br>
 
 © Hoshigane Spica
 
@@ -474,11 +742,57 @@ target="_blank">
 
 <script>
 
+/* ローディング */
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+const loader =
+document.getElementById("loading-screen");
+
+loader.style.opacity="0";
+
+setTimeout(()=>{
+loader.remove();
+},1000);
+
+},1800);
+
+});
+
+/* スクロールアニメ */
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+document
+.querySelectorAll(".section")
+.forEach(section=>{
+
+observer.observe(section);
+
+});
+
+/* BGM */
+
 const bgm =
-document.getElementById('bgm');
+document.getElementById("bgm");
 
 const btn =
-document.getElementById('musicBtn');
+document.getElementById("musicBtn");
 
 function toggleMusic(){
 
@@ -487,14 +801,20 @@ if(bgm.paused){
 bgm.play();
 
 btn.innerHTML =
-'✦ MUSIC STOP ✦';
+"✦ MUSIC STOP ✦";
+
+btn.style.boxShadow =
+"0 0 100px rgba(220,184,255,1)";
 
 }else{
 
 bgm.pause();
 
 btn.innerHTML =
-'✦ STARLIGHT MUSIC ✦';
+"✦ STARLIGHT MUSIC ✦";
+
+btn.style.boxShadow =
+"0 0 50px rgba(220,184,255,.45)";
 
 }
 
