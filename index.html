@@ -6,7 +6,7 @@
 
 <title>星鏡スピカ</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,111 +16,184 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:'Zen Old Mincho',serif;
-background:linear-gradient(180deg,#14052f,#2b0f63,#4e2993);
+background:
+radial-gradient(circle at top,#5b2ca0 0%,#2b0f63 40%,#14052f 100%);
 color:white;
 text-align:center;
 overflow-x:hidden;
 }
 
+/* 星空 */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(white 1px,transparent 1px);
+background-size:60px 60px;
+opacity:.15;
+pointer-events:none;
+}
+
+/* 流れ星 */
+
+.shooting-star{
+position:fixed;
+width:2px;
+height:120px;
+background:linear-gradient(transparent,#fff);
+transform:rotate(45deg);
+opacity:.5;
+animation:shoot 8s linear infinite;
+}
+
+.s1{
+top:-50px;
+left:20%;
+animation-delay:0s;
+}
+
+.s2{
+top:-50px;
+left:70%;
+animation-delay:4s;
+}
+
+@keyframes shoot{
+0%{
+transform:translate(0,0) rotate(45deg);
+opacity:0;
+}
+10%{
+opacity:.8;
+}
+100%{
+transform:translate(600px,600px) rotate(45deg);
+opacity:0;
+}
+}
+
+/* Hero */
+
 .hero{
-padding:50px 20px;
+padding:60px 20px;
 }
 
 .hero img{
-width:650px;
-max-width:95%;
+width:90%;
+max-width:700px;
 border-radius:35px;
-box-shadow:0 0 50px rgba(220,184,255,.45);
+box-shadow:
+0 0 40px rgba(220,184,255,.5),
+0 0 120px rgba(220,184,255,.2);
 }
 
-h1{
-font-size:3.4rem;
-margin-top:35px;
-text-shadow:0 0 25px #dcb8ff;
+.title{
+font-size:4rem;
+margin-top:40px;
+font-weight:700;
+text-shadow:
+0 0 15px #dcb8ff,
+0 0 40px rgba(220,184,255,.5);
 }
 
-.english{
-font-size:1rem;
+.roman{
+font-family:'Cormorant Garamond',serif;
 letter-spacing:8px;
-opacity:.7;
-margin-top:15px;
+font-size:1.2rem;
+margin-top:10px;
+opacity:.85;
 }
 
-.ornament{
-font-size:55px;
+.star{
+font-size:5rem;
+margin:40px 0;
 color:#dcb8ff;
-margin:30px 0;
 text-shadow:0 0 25px #dcb8ff;
 }
 
-.sub{
-font-size:1.25rem;
+.catch{
+font-size:1.7rem;
 line-height:2;
 }
 
+/* Sections */
+
 .section{
-padding:70px 25px;
+padding:90px 25px;
+max-width:900px;
+margin:auto;
 }
 
-.section-title{
-font-size:3rem;
+.section h2{
+font-family:'Cormorant Garamond',serif;
+font-size:4rem;
 margin-bottom:40px;
 text-shadow:0 0 20px #dcb8ff;
 }
 
-.profile{
-max-width:800px;
-margin:auto;
-font-size:1.2rem;
-line-height:2.4;
+.section p{
+font-size:1.3rem;
+line-height:2.2;
 }
 
 .divider{
-margin:35px auto;
-width:200px;
+width:70%;
 height:1px;
-background:rgba(255,255,255,.3);
+background:rgba(255,255,255,.25);
+margin:80px auto;
 }
 
+/* Links */
+
 .links{
-padding:20px 20px 80px;
+padding-bottom:120px;
 }
 
 .link-btn{
 display:block;
 width:90%;
-max-width:600px;
-margin:20px auto;
-padding:24px;
+max-width:700px;
+margin:25px auto;
+padding:28px;
 
 text-decoration:none;
 color:white;
-
-font-size:1.35rem;
+font-size:2rem;
 
 background:rgba(255,255,255,.08);
+
 border:1px solid rgba(255,255,255,.15);
 
 border-radius:999px;
 
-box-shadow:
-0 0 35px rgba(220,184,255,.2),
-inset 0 0 10px rgba(255,255,255,.05);
+backdrop-filter:blur(12px);
 
-transition:.3s;
+transition:.35s;
 }
 
 .link-btn:hover{
-transform:translateY(-4px);
+transform:translateY(-6px) scale(1.02);
+
 background:rgba(220,184,255,.18);
+
+box-shadow:
+0 0 35px #dcb8ff,
+0 0 70px rgba(220,184,255,.3);
 }
 
-.footer{
+/* Footer */
+
+footer{
 padding:60px;
-opacity:.5;
-font-size:.9rem;
+opacity:.6;
 }
 
 </style>
@@ -128,21 +201,22 @@ font-size:.9rem;
 
 <body>
 
+<div class="shooting-star s1"></div>
+<div class="shooting-star s2"></div>
+
 <section class="hero">
 
-<img src="41383BA2-9C07-4669-87AD-F716BA318C6E.png">
+<img src="spica.jpg" alt="星鏡スピカ">
 
-<h1>星鏡スピカ</h1>
+<h1 class="title">星鏡スピカ</h1>
 
-<div class="english">
+<div class="roman">
 HOSHIGANE SPICA
 </div>
 
-<div class="ornament">
-✦
-</div>
+<div class="star">✦</div>
 
-<div class="sub">
+<div class="catch">
 ちょい悪天使VTuber<br>
 ラムズのみんな、ようこそ
 </div>
@@ -151,40 +225,51 @@ HOSHIGANE SPICA
 
 <section class="section">
 
-<div class="section-title">
-PROFILE
-</div>
+<h2>PROFILE</h2>
 
-<div class="profile">
-
+<p>
 配信・歌・ゲーム・雑談を中心に活動中。<br><br>
 
-少し意地悪で、<br>
-少し甘やかす。<br><br>
+少し意地悪で、少し甘やかす。<br><br>
 
 そんな「ちょい悪天使VTuber」<br>
 星鏡スピカです。
+</p>
 
 <div class="divider"></div>
 
-<strong>FAN NAME</strong><br>
-ラムズ
+<h2>FAN NAME</h2>
+
+<p>ラムズ</p>
 
 <div class="divider"></div>
 
-<strong>HASHTAG</strong><br>
-#鏡の中のスピカ<br>
+<h2>HASHTAG</h2>
+
+<p>
+#鏡の中のスピカ<br><br>
 #MirrorOfSpica
+</p>
 
-</div>
+<div class="divider"></div>
+
+<h2>MESSAGE</h2>
+
+<p>
+僕を見つけてくれてありがとう。<br><br>
+
+疲れた日も、嬉しい日も、<br>
+ここが帰って来られる場所になりますように。<br><br>
+
+これからもラムズのみんなと<br>
+たくさんの物語を紡いでいこうね。
+</p>
 
 </section>
 
-<section class="links">
+<section class="section links">
 
-<div class="section-title">
-LINK
-</div>
+<h2>LINK</h2>
 
 <a class="link-btn" href="https://youtube.com/@spica_hoshigane" target="_blank">
 ▶ YouTube
@@ -212,9 +297,9 @@ LINK
 
 </section>
 
-<div class="footer">
+<footer>
 © Hoshigane Spica
-</div>
+</footer>
 
 </body>
 </html>
