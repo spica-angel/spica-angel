@@ -4,9 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>星鏡スピカ</title>
 
@@ -27,13 +25,9 @@ scroll-behavior:smooth;
 body{
 
 font-family:'Zen Old Mincho',serif;
-
 color:white;
-
-text-align:center;
-
 overflow-x:hidden;
-
+text-align:center;
 background-color:#120727;
 
 }
@@ -46,7 +40,7 @@ body{
 
 background-image:
 linear-gradient(
-rgba(15,5,35,.25),
+rgba(15,5,35,.30),
 rgba(55,20,95,.45)
 ),
 url('EE552393-4A35-41CD-9C75-CDD9386DEA1C.png');
@@ -85,35 +79,28 @@ background-attachment:fixed;
 .container{
 
 width:92%;
-
 max-width:1200px;
-
 margin:auto;
-
-padding:40px 0 100px;
 
 }
   .hero{
 
 padding-top:40px;
-
-padding-bottom:80px;
+padding-bottom:100px;
 
 }
 
 .avatar{
 
 width:100%;
-
 max-width:520px;
 
 display:block;
-
 margin:auto;
 
 filter:
 drop-shadow(0 0 50px rgba(255,255,255,.9))
-drop-shadow(0 0 120px rgba(220,184,255,.8));
+drop-shadow(0 0 120px rgba(220,184,255,.7));
 
 animation:float 5s ease-in-out infinite;
 
@@ -122,70 +109,52 @@ animation:float 5s ease-in-out infinite;
 @keyframes float{
 
 0%,100%{
-transform:translateY(0);
+transform:translateY(0px);
 }
 
 50%{
-transform:translateY(-15px);
+transform:translateY(-12px);
 }
 
 }
 
 .guild{
 
-margin-top:20px;
+margin-top:15px;
 
-letter-spacing:6px;
+font-size:1rem;
 
-font-size:.95rem;
+letter-spacing:5px;
 
 color:#f4dfff;
 
 text-shadow:
-0 0 15px #dcb8ff;
+0 0 15px rgba(255,255,255,.7);
 
 }
 
-h1{
+.hero h1{
 
-font-size:clamp(3rem,8vw,5.5rem);
+font-size:clamp(3rem,8vw,6rem);
 
-margin-top:20px;
+margin-top:25px;
 
 text-shadow:
-0 0 15px #fff,
-0 0 40px #dcb8ff,
-0 0 80px #dcb8ff;
+0 0 20px #fff,
+0 0 60px #dcb8ff,
+0 0 120px #dcb8ff;
 
 }
 
 .roman{
 
-margin-top:12px;
+margin-top:15px;
 
 letter-spacing:8px;
 
-opacity:.85;
-
-}
-
-.catch{
-
-margin-top:40px;
-
-font-size:1.3rem;
-
-line-height:2;
-
-}
-
-.welcome{
-
-margin-top:20px;
-
-font-size:1.15rem;
-
 opacity:.9;
+
+font-size:.95rem;
 
 }
 
@@ -196,40 +165,63 @@ font-size:3rem;
 margin:40px 0;
 
 text-shadow:
-0 0 20px #fff,
-0 0 40px #dcb8ff;
+0 0 25px white,
+0 0 50px #dcb8ff;
+
+}
+
+.catch{
+
+font-size:1.4rem;
+
+letter-spacing:3px;
+
+opacity:.95;
+
+text-shadow:
+0 0 15px rgba(255,255,255,.6);
+
+}
+
+.welcome{
+
+margin-top:25px;
+
+font-size:1.2rem;
+
+line-height:2;
 
 }
   .card{
 
-background:rgba(110,75,190,.14);
+background:rgba(95,65,170,.18);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(18px);
 
 border:1px solid rgba(255,255,255,.10);
 
 border-radius:40px;
 
-padding:55px 30px;
+padding:60px 30px;
 
-margin:60px auto;
+margin:70px auto;
 
 max-width:900px;
 
 box-shadow:
-0 0 50px rgba(220,184,255,.15);
+0 0 40px rgba(220,184,255,.15);
 
 }
 
 .card h2{
 
-font-size:2.8rem;
+font-size:3rem;
 
-margin-bottom:40px;
+margin-bottom:50px;
 
 text-shadow:
-0 0 15px #fff,
-0 0 30px #dcb8ff;
+0 0 20px white,
+0 0 50px #dcb8ff;
 
 }
 
@@ -237,7 +229,9 @@ text-shadow:
 
 font-size:1.15rem;
 
-line-height:2.5;
+line-height:2.3;
+
+margin-bottom:25px;
 
 }
 
@@ -254,15 +248,22 @@ border-top:
 
 .fanbox h3{
 
-font-size:1.4rem;
+font-size:1.6rem;
 
-margin-bottom:20px;
+margin-bottom:25px;
+
+letter-spacing:3px;
 
 }
 
-.music-area{
+.fanbox p{
 
-margin:80px auto;
+margin-bottom:12px;
+
+}
+  .music-area{
+
+margin:90px auto;
 
 }
 
@@ -270,7 +271,7 @@ margin:80px auto;
 
 display:inline-block;
 
-padding:26px 70px;
+padding:32px 90px;
 
 border:none;
 
@@ -279,20 +280,20 @@ border-radius:999px;
 background:
 linear-gradient(
 135deg,
-rgba(180,120,255,.40),
+rgba(180,120,255,.45),
 rgba(120,80,220,.30)
 );
 
 color:white;
 
-font-size:1.2rem;
-
 font-family:'Zen Old Mincho',serif;
+
+font-size:1.4rem;
 
 cursor:pointer;
 
 box-shadow:
-0 0 40px rgba(220,184,255,.35);
+0 0 50px rgba(220,184,255,.35);
 
 transition:.3s;
 
@@ -303,10 +304,11 @@ transition:.3s;
 transform:translateY(-5px);
 
 box-shadow:
-0 0 70px rgba(220,184,255,.8);
+0 0 80px rgba(220,184,255,.8);
 
 }
-  .link-btn{
+
+.link-btn{
 
 display:block;
 
@@ -314,29 +316,26 @@ max-width:700px;
 
 margin:22px auto;
 
-padding:28px;
+padding:24px;
 
 text-decoration:none;
 
 color:white;
 
-font-size:1.25rem;
+font-size:1.2rem;
+
+border-radius:999px;
 
 background:
 linear-gradient(
 135deg,
-rgba(180,120,255,.28),
-rgba(120,80,220,.18)
+rgba(180,120,255,.30),
+rgba(120,80,220,.20)
 );
 
-border:1px solid rgba(255,255,255,.12);
-
-border-radius:999px;
+border:1px solid rgba(255,255,255,.10);
 
 backdrop-filter:blur(15px);
-
-box-shadow:
-0 0 30px rgba(220,184,255,.20);
 
 transition:.3s;
 
@@ -346,35 +345,30 @@ transition:.3s;
 
 transform:translateY(-5px);
 
-background:
-linear-gradient(
-135deg,
-rgba(210,150,255,.45),
-rgba(150,100,255,.30)
-);
-
 box-shadow:
 0 0 60px rgba(220,184,255,.7);
 
 }
-
-footer{
+  footer{
 
 margin-top:100px;
 
-padding-bottom:50px;
+padding-bottom:60px;
 
 line-height:2.2;
 
-opacity:.85;
+opacity:.9;
 
 }
 
 footer .thanks{
 
-font-size:1.2rem;
+font-size:1.3rem;
 
 margin-bottom:20px;
+
+text-shadow:
+0 0 15px rgba(255,255,255,.6);
 
 }
 
@@ -384,27 +378,35 @@ margin-bottom:20px;
 max-width:460px;
 }
 
+.hero{
+padding-bottom:70px;
+}
+
 .card{
 padding:45px 22px;
 }
 
 .card h2{
-font-size:2.2rem;
+font-size:2.3rem;
 }
 
 .card p{
 font-size:1rem;
-line-height:2.3;
+line-height:2.2;
+}
+
+.catch{
+font-size:1.15rem;
 }
 
 #musicBtn{
-padding:22px 40px;
-font-size:1rem;
+padding:24px 45px;
+font-size:1.1rem;
 }
 
 .link-btn{
-font-size:1.1rem;
-padding:24px;
+font-size:1.05rem;
+padding:22px;
 }
 
 }
@@ -434,7 +436,7 @@ HOSHIGANE SPICA
 <div class="star">✦</div>
 
 <p class="catch">
-Angel VTuber
+✦ Angel VTuber ✦
 </p>
 
 <p class="welcome">
@@ -447,30 +449,18 @@ Angel VTuber
 <h2>PROFILE</h2>
 
 <p>
-
-星々の光に導かれながら、<br>
-歌・雑談・ゲームを届ける<br>
-天使VTuber。
-
+星々の光に導かれながら、
+歌・雑談・ゲームを届ける天使VTuber。
 </p>
 
-<br>
-
 <p>
-
-少しおっちょこちょいで、<br>
+少しおっちょこちょいで、
 少し甘やかし上手。
-
 </p>
 
-<br>
-
 <p>
-
-ラムズのみんなが<br>
-安心して帰ってこられる場所を<br>
+ラムズのみんなが安心して帰ってこられる場所を
 今日も作っています。
-
 </p>
 
 <div class="fanbox">
@@ -482,8 +472,6 @@ Angel VTuber
 <p>
 ラムズ
 </p>
-
-<br>
 
 <p>
 #鏡の中のスピカ
@@ -572,7 +560,7 @@ target="_blank">
 
 <div class="thanks">
 
-✦ Thank you for visiting ✦
+✦ Thank you Lambs ✦
 
 </div>
 
@@ -636,7 +624,7 @@ btn.innerHTML =
 "✦ STARLIGHT MUSIC ✦";
 
 btn.style.boxShadow =
-"0 0 40px rgba(220,184,255,.35)";
+"0 0 50px rgba(220,184,255,.35)";
 
 }
 
