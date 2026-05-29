@@ -18,76 +18,99 @@ box-sizing:border-box;
 
 body{
 font-family:'Zen Old Mincho',serif;
-background:linear-gradient(180deg,#1b1038,#321b63,#4b2d7f);
+background:linear-gradient(180deg,#14082f,#2a1458,#43227d);
 color:white;
 text-align:center;
 overflow-x:hidden;
 }
 
 .hero{
-padding:60px 20px;
+padding:50px 20px 20px;
 }
 
 .hero img{
-width:320px;
-max-width:90%;
-filter:drop-shadow(0 0 25px rgba(255,255,255,.3));
+width:500px;
+max-width:95%;
+border-radius:30px;
+box-shadow:0 0 40px rgba(220,184,255,.5);
 }
 
 h1{
 font-size:3rem;
-margin-top:20px;
-text-shadow:0 0 20px #dcb8ff;
+margin-top:25px;
+text-shadow:0 0 25px #dcb8ff;
+}
+
+.english{
+font-size:1rem;
+letter-spacing:4px;
+opacity:.7;
+margin-top:10px;
 }
 
 .ornament{
-font-size:40px;
+font-size:45px;
 color:#dcb8ff;
-margin:15px 0;
-text-shadow:0 0 20px #dcb8ff;
+margin:20px 0;
+text-shadow:0 0 25px #dcb8ff;
 }
 
 .sub{
-font-size:1.1rem;
+font-size:1.2rem;
+line-height:2;
+opacity:.9;
+}
+
+.profile{
+max-width:700px;
+margin:40px auto;
+padding:0 25px;
+font-size:1rem;
 line-height:2;
 opacity:.9;
 }
 
 .links{
-padding:30px 20px 60px;
+padding:20px 20px 70px;
+}
+
+.section-title{
+font-size:2.3rem;
+margin-bottom:30px;
+text-shadow:0 0 20px #dcb8ff;
 }
 
 .link-btn{
 display:block;
 width:90%;
-max-width:500px;
-margin:15px auto;
-padding:18px;
-background:rgba(220,184,255,.25);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,.15);
-border-radius:999px;
+max-width:550px;
+margin:18px auto;
+padding:20px;
 text-decoration:none;
 color:white;
 font-size:1.2rem;
+
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.15);
+border-radius:999px;
+
+box-shadow:
+0 0 25px rgba(220,184,255,.2),
+inset 0 0 20px rgba(255,255,255,.05);
+
 transition:.3s;
-box-shadow:0 0 20px rgba(220,184,255,.2);
 }
 
 .link-btn:hover{
 transform:translateY(-3px);
-background:rgba(220,184,255,.4);
-}
-
-.section-title{
-font-size:2rem;
-margin-bottom:30px;
-text-shadow:0 0 15px #dcb8ff;
+background:rgba(220,184,255,.25);
 }
 
 .footer{
 padding:40px;
-opacity:.6;
+opacity:.5;
 font-size:.9rem;
 }
 
@@ -102,7 +125,13 @@ font-size:.9rem;
 
 <h1>星鏡スピカ</h1>
 
-<div class="ornament">✦</div>
+<div class="english">
+HOSHIGANE SPICA
+</div>
+
+<div class="ornament">
+✦
+</div>
 
 <div class="sub">
 ちょい悪天使VTuber<br>
@@ -111,36 +140,54 @@ font-size:.9rem;
 
 </section>
 
+<div class="profile">
+
+配信・歌・ゲーム・雑談を中心に活動中。<br>
+少し意地悪で、少し甘やかす。<br>
+そんな「ちょい悪天使VTuber」星鏡スピカです。💜
+
+</div>
+
 <section class="links">
 
 <div class="section-title">
 LINK
 </div>
 
-<a class="link-btn" href="https://youtube.com/@spica_hoshigane" target="_blank">
+<a class="link-btn"
+href="https://youtube.com/@spica_hoshigane"
+target="_blank">
 YouTube
 </a>
 
-<a class="link-btn" href="https://x.com/hoshigane_spica" target="_blank">
+<a class="link-btn"
+href="https://x.com/hoshigane_spica"
+target="_blank">
 X
 </a>
 
-<a class="link-btn" href="https://www.tiktok.com/@hoshigane_spica" target="_blank">
+<a class="link-btn"
+href="https://www.tiktok.com/@hoshigane_spica"
+target="_blank">
 TikTok
 </a>
 
-<a class="link-btn" href="https://hoshiganespica.booth.pm/" target="_blank">
+<a class="link-btn"
+href="https://hoshiganespica.booth.pm/"
+target="_blank">
 BOOTH
 </a>
 
-<a class="link-btn" href="https://marshmallow-qa.com/wcor8kzzwjwskmo" target="_blank">
+<a class="link-btn"
+href="https://marshmallow-qa.com/wcor8kzzwjwskmo"
+target="_blank">
 Marshmallow
 </a>
 
 </section>
 
 <div class="footer">
-© 星鏡スピカ
+© Hoshigane Spica
 </div>
 
 </body>
