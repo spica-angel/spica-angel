@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 
 <meta charset="UTF-8">
@@ -56,8 +55,6 @@ filter:blur(3px);
 
 }
 
-/* スマホ背景 */
-
 @media(max-width:768px){
 
 body::before{
@@ -76,8 +73,6 @@ background-repeat:no-repeat;
 }
 
 }
-
-/* PC背景 */
 
 @media(min-width:769px){
 
@@ -114,12 +109,14 @@ padding-bottom:80px;
 
 }
 
+/* キャラ */
+
 .character{
 
 display:block;
 
-width:95%;
-max-width:720px;
+width:88%;
+max-width:650px;
 
 margin:auto;
 
@@ -142,19 +139,19 @@ transform:translateY(0px);
 }
 
 50%{
-transform:translateY(-12px);
+transform:translateY(-10px);
 }
 
 }
   .affiliation{
 
-margin-top:-5px;
+margin-top:30px;
 
 font-size:18px;
 
 letter-spacing:6px;
 
-color:rgba(255,255,255,.85);
+color:rgba(255,255,255,.88);
 
 }
 
@@ -162,25 +159,25 @@ color:rgba(255,255,255,.85);
 
 font-size:clamp(54px,10vw,110px);
 
-margin-top:15px;
+margin-top:35px;
 
 font-weight:700;
 
 text-shadow:
-0 0 12px rgba(255,255,255,.9),
+0 0 12px rgba(255,255,255,.95),
 0 0 35px rgba(220,184,255,.8);
 
 }
 
 .roman{
 
-margin-top:15px;
+margin-top:20px;
 
 font-size:24px;
 
 letter-spacing:8px;
 
-color:rgba(255,255,255,.9);
+color:rgba(255,255,255,.92);
 
 }
 
@@ -188,7 +185,7 @@ color:rgba(255,255,255,.9);
 
 font-size:70px;
 
-margin:40px 0;
+margin:55px 0;
 
 text-shadow:
 0 0 20px rgba(255,255,255,.8);
@@ -199,7 +196,7 @@ text-shadow:
 
 font-size:36px;
 
-margin-bottom:25px;
+margin-bottom:30px;
 
 }
 
@@ -207,7 +204,7 @@ margin-bottom:25px;
 
 font-size:28px;
 
-margin-bottom:70px;
+margin-bottom:80px;
 
 }
 
@@ -278,8 +275,7 @@ font-size:26px;
 line-height:2;
 
 }
-
-.music-btn,
+  .music-btn,
 .link-btn{
 
 display:block;
@@ -311,8 +307,21 @@ backdrop-filter:blur(10px);
 box-shadow:
 0 0 20px rgba(220,184,255,.12);
 
+transition:.3s;
+
 }
-  .footer{
+
+.music-btn:hover,
+.link-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 0 40px rgba(220,184,255,.35);
+
+}
+
+.footer{
 
 text-align:center;
 
@@ -457,29 +466,17 @@ PROFILE
 LINK
 </h2>
 
-<a class="link-btn" href="https://youtube.com/@spica_hoshigane" target="_blank">
-▶ YouTube
-</a>
+<a class="link-btn" href="https://youtube.com/@spica_hoshigane" target="_blank">▶ YouTube</a>
 
-<a class="link-btn" href="https://web.iriam.app/s/user/QAHoReYrJj?uuid=af8f1df2" target="_blank">
-🎤 IRIAM
-</a>
+<a class="link-btn" href="https://web.iriam.app/s/user/QAHoReYrJj?uuid=af8f1df2" target="_blank">🎤 IRIAM</a>
 
-<a class="link-btn" href="https://x.com/hoshigane_spica" target="_blank">
-✦ X
-</a>
+<a class="link-btn" href="https://x.com/hoshigane_spica" target="_blank">✦ X</a>
 
-<a class="link-btn" href="https://www.tiktok.com/@hoshigane_spica" target="_blank">
-🎵 TikTok
-</a>
+<a class="link-btn" href="https://www.tiktok.com/@hoshigane_spica" target="_blank">🎵 TikTok</a>
 
-<a class="link-btn" href="https://hoshiganespica.booth.pm/" target="_blank">
-🛍 BOOTH
-</a>
+<a class="link-btn" href="https://hoshiganespica.booth.pm/" target="_blank">🛍 BOOTH</a>
 
-<a class="link-btn" href="https://marshmallow-qa.com/wcor8kzzwjwskmo" target="_blank">
-💌 Marshmallow
-</a>
+<a class="link-btn" href="https://marshmallow-qa.com/wcor8kzzwjwskmo" target="_blank">💌 Marshmallow</a>
 
 </section>
 
@@ -495,13 +492,8 @@ May the stars guide your way.
 
 <br>
 
-<div>
-#鏡の中のスピカ
-</div>
-
-<div>
-#MirrorOfSpica
-</div>
+<div>#鏡の中のスピカ</div>
+<div>#MirrorOfSpica</div>
 
 <br>
 
@@ -515,20 +507,20 @@ May the stars guide your way.
 
 <script>
 
-const bgm = document.getElementById("bgm");
-const btn = document.getElementById("musicBtn");
+const bgm=document.getElementById("bgm");
+const btn=document.getElementById("musicBtn");
 
 function toggleMusic(){
 
 if(bgm.paused){
 
 bgm.play();
-btn.innerHTML = "✦ MUSIC STOP ✦";
+btn.innerHTML="✦ MUSIC STOP ✦";
 
 }else{
 
 bgm.pause();
-btn.innerHTML = "✦ STARLIGHT MUSIC ✦";
+btn.innerHTML="✦ STARLIGHT MUSIC ✦";
 
 }
 
