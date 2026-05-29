@@ -4,9 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>星鏡スピカ</title>
 
@@ -32,13 +30,37 @@ color:white;
 
 overflow-x:hidden;
 
+position:relative;
+
+}
+
+/* 背景ぼかし */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+z-index:-2;
+
+transform:scale(1.05);
+
+filter:blur(5px);
+
 }
 
 /* スマホ背景 */
 
 @media(max-width:768px){
 
-body{
+body::before{
 
 background:
 linear-gradient(
@@ -50,7 +72,6 @@ url('EE552393-4A35-41CD-9C75-CDD9386DEA1C.png');
 background-size:cover;
 background-position:center top;
 background-repeat:no-repeat;
-background-attachment:fixed;
 
 }
 
@@ -60,7 +81,7 @@ background-attachment:fixed;
 
 @media(min-width:769px){
 
-body{
+body::before{
 
 background:
 linear-gradient(
@@ -72,7 +93,6 @@ url('4CDB24F9-160D-43C4-B7E4-F9BCB2CE237A.png');
 background-size:cover;
 background-position:center center;
 background-repeat:no-repeat;
-background-attachment:fixed;
 
 }
 
@@ -88,26 +108,79 @@ margin:auto;
 
 .hero{
 
+position:relative;
+
 text-align:center;
+
 padding-top:70px;
 padding-bottom:120px;
+
+}
+
+/* 神々しいオーラ */
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+top:120px;
+
+transform:translateX(-50%);
+
+width:700px;
+height:700px;
+
+background:
+radial-gradient(
+circle,
+rgba(220,184,255,.35) 0%,
+rgba(220,184,255,.15) 35%,
+transparent 70%
+);
+
+pointer-events:none;
+
+z-index:-1;
+
+animation:
+auraPulse 8s ease-in-out infinite;
+
+}
+
+@keyframes auraPulse{
+
+0%,100%{
+transform:translateX(-50%) scale(1);
+opacity:.8;
+}
+
+50%{
+transform:translateX(-50%) scale(1.15);
+opacity:1;
+}
 
 }
 
 .character{
 
 width:85%;
-max-width:520px;
+max-width:580px;
 
 filter:
-drop-shadow(0 0 40px rgba(255,255,255,.25));
+drop-shadow(0 0 40px rgba(255,255,255,1))
+drop-shadow(0 0 100px rgba(220,184,255,1))
+drop-shadow(0 0 180px rgba(180,120,255,.95))
+drop-shadow(0 0 280px rgba(180,120,255,.75));
 
 animation:
-floatCharacter 5s ease-in-out infinite;
+floatCharacter 5s ease-in-out infinite,
+divineGlow 6s ease-in-out infinite;
 
 }
-
-@keyframes floatCharacter{
+  @keyframes floatCharacter{
 
 0%,100%{
 transform:translateY(0px);
@@ -118,7 +191,32 @@ transform:translateY(-18px);
 }
 
 }
-  .affiliation{
+
+@keyframes divineGlow{
+
+0%,100%{
+
+filter:
+drop-shadow(0 0 40px rgba(255,255,255,1))
+drop-shadow(0 0 100px rgba(220,184,255,1))
+drop-shadow(0 0 180px rgba(180,120,255,.95))
+drop-shadow(0 0 280px rgba(180,120,255,.75));
+
+}
+
+50%{
+
+filter:
+drop-shadow(0 0 70px rgba(255,255,255,1))
+drop-shadow(0 0 160px rgba(220,184,255,1))
+drop-shadow(0 0 280px rgba(180,120,255,1))
+drop-shadow(0 0 420px rgba(180,120,255,.95));
+
+}
+
+}
+
+.affiliation{
 
 margin-top:25px;
 
@@ -126,7 +224,7 @@ font-size:22px;
 
 letter-spacing:8px;
 
-color:rgba(255,255,255,.8);
+color:rgba(255,255,255,.85);
 
 }
 
@@ -140,9 +238,9 @@ font-weight:700;
 
 text-shadow:
 0 0 20px #fff,
-0 0 60px #d8b6ff,
-0 0 120px #b37eff,
-0 0 180px #b37eff;
+0 0 80px #d8b6ff,
+0 0 180px #b37eff,
+0 0 320px #b37eff;
 
 animation:
 titleGlow 4s ease-in-out infinite;
@@ -155,19 +253,19 @@ titleGlow 4s ease-in-out infinite;
 
 text-shadow:
 0 0 20px #fff,
-0 0 60px #d8b6ff,
-0 0 120px #b37eff,
-0 0 180px #b37eff;
+0 0 80px #d8b6ff,
+0 0 180px #b37eff,
+0 0 320px #b37eff;
 
 }
 
 50%{
 
 text-shadow:
-0 0 30px #fff,
-0 0 90px #d8b6ff,
-0 0 180px #b37eff,
-0 0 260px #b37eff;
+0 0 40px #fff,
+0 0 120px #d8b6ff,
+0 0 260px #b37eff,
+0 0 420px #b37eff;
 
 }
 
@@ -181,7 +279,7 @@ font-size:28px;
 
 letter-spacing:10px;
 
-color:rgba(255,255,255,.9);
+color:rgba(255,255,255,.95);
 
 }
 
@@ -195,15 +293,15 @@ animation:
 floatStar 4s ease-in-out infinite;
 
 text-shadow:
-0 0 20px white,
-0 0 50px #d8b6ff;
+0 0 25px white,
+0 0 60px #d8b6ff;
 
 }
 
 @keyframes floatStar{
 
 0%,100%{
-transform:translateY(0px);
+transform:translateY(0);
 }
 
 50%{
@@ -254,7 +352,7 @@ border:
 box-shadow:
 0 8px 32px rgba(0,0,0,.25),
 inset 0 1px 1px rgba(255,255,255,.2),
-0 0 50px rgba(200,160,255,.15);
+0 0 60px rgba(220,184,255,.25);
 
 }
 
@@ -268,7 +366,7 @@ margin-bottom:60px;
 
 text-shadow:
 0 0 20px white,
-0 0 40px #d8b6ff;
+0 0 50px #d8b6ff;
 
 }
 
@@ -305,12 +403,7 @@ line-height:2;
 
 }
 
-.music-area{
-
-margin:80px auto;
-
-}
-  .music-btn{
+.music-btn{
 
 display:block;
 
@@ -322,30 +415,30 @@ padding:35px;
 
 font-size:32px;
 
+color:white;
+
 border:none;
 
 border-radius:999px;
 
 cursor:pointer;
 
-color:white;
-
 background:
 linear-gradient(
 135deg,
-rgba(255,255,255,.12),
-rgba(255,255,255,.04)
+rgba(255,255,255,.14),
+rgba(255,255,255,.05)
 );
 
 backdrop-filter:blur(20px);
 -webkit-backdrop-filter:blur(20px);
 
 border:
-1px solid rgba(255,255,255,.12);
+1px solid rgba(255,255,255,.15);
 
 box-shadow:
-0 0 35px rgba(210,180,255,.18),
-inset 0 1px 1px rgba(255,255,255,.15);
+0 0 50px rgba(220,184,255,.25),
+inset 0 1px 1px rgba(255,255,255,.2);
 
 transition:.4s;
 
@@ -356,12 +449,11 @@ transition:.4s;
 transform:translateY(-4px);
 
 box-shadow:
-0 0 60px rgba(220,190,255,.35),
-inset 0 1px 1px rgba(255,255,255,.25);
+0 0 90px rgba(220,184,255,.55),
+inset 0 1px 1px rgba(255,255,255,.3);
 
 }
-
-.link-btn{
+  .link-btn{
 
 display:block;
 
@@ -407,7 +499,7 @@ transition:.4s;
 transform:translateY(-4px);
 
 box-shadow:
-0 0 60px rgba(220,190,255,.35),
+0 0 80px rgba(220,190,255,.45),
 inset 0 1px 1px rgba(255,255,255,.25);
 
 }
@@ -434,7 +526,8 @@ text-shadow:
 0 0 15px rgba(255,255,255,.7);
 
 }
-  @media(max-width:768px){
+
+@media(max-width:768px){
 
 .affiliation{
 font-size:14px;
@@ -508,44 +601,30 @@ font-size:24px;
 
 <section class="hero">
 
-<img
-src="IMG_5845.png"
-class="character">
+<img src="IMG_5845.png" class="character">
 
 <div class="affiliation">
-
 ✦ LOCUS MEUS 所属 ✦
-
 </div>
 
 <h1 class="name">
-
 星鏡スピカ
-
 </h1>
 
 <div class="roman">
-
 HOSHIGANE SPICA
-
 </div>
 
 <div class="star">
-
 ✦
-
 </div>
 
 <div class="catchcopy">
-
 ✦ Angel VTuber ✦
-
 </div>
 
 <div class="welcome">
-
 ラムズのみんな、ようこそ
-
 </div>
 
 </section>
@@ -553,27 +632,18 @@ HOSHIGANE SPICA
 <section class="card">
 
 <h2 class="section-title">
-
 PROFILE
-
 </h2>
 
 <div class="profile-text">
 
-  星々の光に導かれながら、<br>
-
-歌・雑談・ゲームを届ける天使VTuber。
-
-<br><br>
+星々の光に導かれながら、<br>
+歌・雑談・ゲームを届ける天使VTuber。<br><br>
 
 少しおっちょこちょいで、<br>
-
-少し甘やかし上手。
-
-<br><br>
+少し甘やかし上手。<br><br>
 
 ラムズのみんなが安心して帰ってこられる場所を<br>
-
 今日も作っています。
 
 </div>
@@ -582,24 +652,16 @@ PROFILE
 
 <div class="fanname">
 
-✦ FAN NAME ✦
+✦ FAN NAME ✦<br><br>
 
-<br><br>
+ラムズ<br><br>
 
-ラムズ
-
-<br><br>
-
-#鏡の中のスピカ
-
-<br>
-
+#鏡の中のスピカ<br>
 #MirrorOfSpica
 
 </div>
 
 </section>
-
 <div class="music-area">
 
 <button
@@ -631,8 +693,7 @@ LINK
 
 </h2>
 
-<a
-class="link-btn"
+<a class="link-btn"
 href="https://youtube.com/@spica_hoshigane"
 target="_blank">
 
@@ -640,8 +701,7 @@ target="_blank">
 
 </a>
 
-<a
-class="link-btn"
+<a class="link-btn"
 href="https://web.iriam.app/s/user/QAHoReYrJj?uuid=af8f1df2"
 target="_blank">
 
@@ -649,16 +709,15 @@ target="_blank">
 
 </a>
 
-<a
-class="link-btn"
+<a class="link-btn"
 href="https://x.com/hoshigane_spica"
 target="_blank">
 
 ✦ X
 
 </a>
-<a
-class="link-btn"
+
+<a class="link-btn"
 href="https://www.tiktok.com/@hoshigane_spica"
 target="_blank">
 
@@ -666,8 +725,7 @@ target="_blank">
 
 </a>
 
-<a
-class="link-btn"
+<a class="link-btn"
 href="https://hoshiganespica.booth.pm/"
 target="_blank">
 
@@ -675,8 +733,7 @@ target="_blank">
 
 </a>
 
-<a
-class="link-btn"
+<a class="link-btn"
 href="https://marshmallow-qa.com/wcor8kzzwjwskmo"
 target="_blank">
 
@@ -695,31 +752,23 @@ target="_blank">
 </div>
 
 <div>
-
 May the stars guide your way.
-
 </div>
 
 <br>
 
 <div>
-
 #鏡の中のスピカ
-
 </div>
 
 <div>
-
 #MirrorOfSpica
-
 </div>
 
 <br>
 
 <div>
-
 © Hoshigane Spica
-
 </div>
 
 </footer>
@@ -744,10 +793,10 @@ btn.innerHTML =
 "✦ MUSIC STOP ✦";
 
 btn.style.boxShadow =
-"0 0 100px rgba(220,184,255,1)";
+"0 0 120px rgba(220,184,255,1)";
 
 btn.style.transform =
-"scale(1.03)";
+"scale(1.05)";
 
 }else{
 
@@ -757,7 +806,7 @@ btn.innerHTML =
 "✦ STARLIGHT MUSIC ✦";
 
 btn.style.boxShadow =
-"0 0 35px rgba(210,180,255,.18)";
+"0 0 50px rgba(220,184,255,.25)";
 
 btn.style.transform =
 "scale(1)";
@@ -767,6 +816,7 @@ btn.style.transform =
 }
 
 </script>
+
 </body>
 
 </html>
