@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>星鏡スピカ</title>
 
@@ -27,19 +30,51 @@ serif;
 
 color:white;
 
+overflow-x:hidden;
+
+}
+
+/* スマホ背景 */
+
+@media(max-width:768px){
+
+body{
+
 background:
 linear-gradient(
-rgba(8,8,30,.25),
-rgba(45,15,80,.35)
+rgba(15,5,35,.30),
+rgba(55,20,95,.45)
 ),
-url('haikei.PNG');
+url('EE552393-4A35-41CD-9C75-CDD9386DEA1C.png');
 
 background-size:cover;
-background-position:center;
+background-position:center top;
 background-repeat:no-repeat;
 background-attachment:fixed;
 
-overflow-x:hidden;
+}
+
+}
+
+/* PC背景 */
+
+@media(min-width:769px){
+
+body{
+
+background:
+linear-gradient(
+rgba(15,5,35,.20),
+rgba(55,20,95,.35)
+),
+url('4CDB24F9-160D-43C4-B7E4-F9BCB2CE237A.png');
+
+background-size:cover;
+background-position:center center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+}
 
 }
 
@@ -67,13 +102,28 @@ max-width:520px;
 filter:
 drop-shadow(0 0 40px rgba(255,255,255,.25));
 
+animation:
+floatCharacter 5s ease-in-out infinite;
+
 }
 
-.affiliation{
+@keyframes floatCharacter{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-18px);
+}
+
+}
+  .affiliation{
 
 margin-top:25px;
 
 font-size:22px;
+
 letter-spacing:8px;
 
 color:rgba(255,255,255,.8);
@@ -89,9 +139,37 @@ margin-top:25px;
 font-weight:700;
 
 text-shadow:
-0 0 15px #fff,
-0 0 35px #d8b6ff,
-0 0 70px #b37eff;
+0 0 20px #fff,
+0 0 60px #d8b6ff,
+0 0 120px #b37eff,
+0 0 180px #b37eff;
+
+animation:
+titleGlow 4s ease-in-out infinite;
+
+}
+
+@keyframes titleGlow{
+
+0%,100%{
+
+text-shadow:
+0 0 20px #fff,
+0 0 60px #d8b6ff,
+0 0 120px #b37eff,
+0 0 180px #b37eff;
+
+}
+
+50%{
+
+text-shadow:
+0 0 30px #fff,
+0 0 90px #d8b6ff,
+0 0 180px #b37eff,
+0 0 260px #b37eff;
+
+}
 
 }
 
@@ -124,16 +202,12 @@ text-shadow:
 
 @keyframes floatStar{
 
-0%{
+0%,100%{
 transform:translateY(0px);
 }
 
 50%{
-transform:translateY(-15px);
-}
-
-100%{
-transform:translateY(0px);
+transform:translateY(-12px);
 }
 
 }
@@ -156,9 +230,9 @@ font-size:34px;
 margin-bottom:100px;
 
 }
+  .card{
 
-.card{
-  padding:60px;
+padding:60px;
 
 margin:50px 20px;
 
@@ -204,7 +278,7 @@ text-align:center;
 
 font-size:34px;
 
-line-height:2.4;
+line-height:2.2;
 
 }
 
@@ -231,7 +305,12 @@ line-height:2;
 
 }
 
-.music-btn{
+.music-area{
+
+margin:80px auto;
+
+}
+  .music-btn{
 
 display:block;
 
@@ -259,7 +338,6 @@ rgba(255,255,255,.04)
 );
 
 backdrop-filter:blur(20px);
-
 -webkit-backdrop-filter:blur(20px);
 
 border:
@@ -272,7 +350,8 @@ inset 0 1px 1px rgba(255,255,255,.15);
 transition:.4s;
 
 }
-  .music-btn:hover{
+
+.music-btn:hover{
 
 transform:translateY(-4px);
 
@@ -355,8 +434,7 @@ text-shadow:
 0 0 15px rgba(255,255,255,.7);
 
 }
-
-@media(max-width:768px){
+  @media(max-width:768px){
 
 .affiliation{
 font-size:14px;
@@ -399,7 +477,8 @@ font-size:18px;
 .fanname{
 font-size:22px;
 }
-  .music-btn{
+
+.music-btn{
 font-size:20px;
 padding:24px;
 }
@@ -481,7 +560,7 @@ PROFILE
 
 <div class="profile-text">
 
-星々の光に導かれながら、<br>
+  星々の光に導かれながら、<br>
 
 歌・雑談・ゲームを届ける天使VTuber。
 
@@ -498,6 +577,7 @@ PROFILE
 今日も作っています。
 
 </div>
+
 <div class="divider"></div>
 
 <div class="fanname">
@@ -520,6 +600,8 @@ PROFILE
 
 </section>
 
+<div class="music-area">
+
 <button
 id="musicBtn"
 class="music-btn"
@@ -538,6 +620,8 @@ src="bgm.mp3"
 type="audio/mpeg">
 
 </audio>
+
+</div>
 
 <section class="card">
 
@@ -630,7 +714,18 @@ May the stars guide your way.
 
 </div>
 
+<br>
+
+<div>
+
+© Hoshigane Spica
+
+</div>
+
 </footer>
+
+</div>
+
 <script>
 
 const bgm =
@@ -672,44 +767,6 @@ btn.style.transform =
 }
 
 </script>
-<script>
+</body>
 
-const bgm =
-document.getElementById("bgm");
-
-const btn =
-document.getElementById("musicBtn");
-
-function toggleMusic(){
-
-if(bgm.paused){
-
-bgm.play();
-
-btn.innerHTML =
-"✦ MUSIC STOP ✦";
-
-btn.style.boxShadow =
-"0 0 100px rgba(220,184,255,1)";
-
-btn.style.transform =
-"scale(1.03)";
-
-}else{
-
-bgm.pause();
-
-btn.innerHTML =
-"✦ STARLIGHT MUSIC ✦";
-
-btn.style.boxShadow =
-"0 0 35px rgba(210,180,255,.18)";
-
-btn.style.transform =
-"scale(1)";
-
-}
-
-}
-
-</script>
+</html>
