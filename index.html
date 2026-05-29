@@ -3,106 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>星鏡スピカ</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-body{
+
+*{
 margin:0;
-font-family:"Yu Gothic",sans-serif;
-background:linear-gradient(180deg,#1b1035,#3d236d,#5e3ba0);
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Zen Old Mincho',serif;
+background:linear-gradient(180deg,#1b1038,#321b63,#4b2d7f);
 color:white;
 text-align:center;
+overflow-x:hidden;
 }
 
 .hero{
-padding:80px 20px;
+padding:60px 20px;
+}
+
+.hero img{
+width:320px;
+max-width:90%;
+filter:drop-shadow(0 0 25px rgba(255,255,255,.3));
 }
 
 h1{
 font-size:3rem;
-margin-bottom:10px;
-text-shadow:0 0 20px #d9b3ff;
+margin-top:20px;
+text-shadow:0 0 20px #dcb8ff;
 }
 
-.subtitle{
+.ornament{
+font-size:40px;
+color:#dcb8ff;
+margin:15px 0;
+text-shadow:0 0 20px #dcb8ff;
+}
+
+.sub{
 font-size:1.1rem;
+line-height:2;
 opacity:.9;
 }
 
-.card{
-max-width:700px;
-margin:30px auto;
-padding:30px;
-background:rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
-border-radius:25px;
+.links{
+padding:30px 20px 60px;
 }
 
-.btn{
+.link-btn{
 display:block;
+width:90%;
+max-width:500px;
 margin:15px auto;
 padding:18px;
-width:80%;
-max-width:400px;
-background:#c89cff;
-color:white;
-text-decoration:none;
+background:rgba(220,184,255,.25);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.15);
 border-radius:999px;
-font-weight:bold;
-box-shadow:0 0 20px rgba(200,156,255,.5);
+text-decoration:none;
+color:white;
+font-size:1.2rem;
+transition:.3s;
+box-shadow:0 0 20px rgba(220,184,255,.2);
 }
 
-.btn:hover{
-opacity:.8;
+.link-btn:hover{
+transform:translateY(-3px);
+background:rgba(220,184,255,.4);
 }
 
-footer{
+.section-title{
+font-size:2rem;
+margin-bottom:30px;
+text-shadow:0 0 15px #dcb8ff;
+}
+
+.footer{
 padding:40px;
-opacity:.7;
+opacity:.6;
+font-size:.9rem;
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-<h1>🌙 星鏡スピカ 🪽</h1>
-<p class="subtitle">
+<section class="hero">
+
+<img src="41383BA2-9C07-4669-87AD-F716BA318C6E.png">
+
+<h1>星鏡スピカ</h1>
+
+<div class="ornament">✦</div>
+
+<div class="sub">
 ちょい悪天使VTuber<br>
-ラムズのみんな、ようこそ💜
-</p>
+ラムズのみんな、ようこそ
 </div>
 
-<div class="card">
+</section>
 
-<h2>LINK</h2>
+<section class="links">
 
-<a class="btn" href="#">🎥 YouTube</a>
-
-<a class="btn" href="https://x.com/hoshigane_spica">
-🐦 X</a>
-
-<a class="btn" href="#">🎵 TikTok</a>
-
-<a class="btn" href="#">🛍 BOOTH</a>
-
+<div class="section-title">
+LINK
 </div>
 
-<div class="card">
+<a class="link-btn" href="https://youtube.com/@spica_hoshigane" target="_blank">
+YouTube
+</a>
 
-<h2>PROFILE</h2>
+<a class="link-btn" href="https://x.com/hoshigane_spica" target="_blank">
+X
+</a>
 
-<p>
-白髪×ピンク瞳のちょい悪天使VTuber。<br>
-雑談・歌・ゲーム配信を中心に活動中！
-</p>
+<a class="link-btn" href="https://www.tiktok.com/@hoshigane_spica" target="_blank">
+TikTok
+</a>
 
+<a class="link-btn" href="https://hoshiganespica.booth.pm/" target="_blank">
+BOOTH
+</a>
+
+<a class="link-btn" href="https://marshmallow-qa.com/wcor8kzzwjwskmo" target="_blank">
+Marshmallow
+</a>
+
+</section>
+
+<div class="footer">
+© 星鏡スピカ
 </div>
-
-<footer>
-#鏡の中のスピカ<br>
-#MirrorOfSpica
-</footer>
 
 </body>
 </html>
