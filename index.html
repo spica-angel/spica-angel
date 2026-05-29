@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,22 +18,30 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
+
 font-family:'Zen Old Mincho',serif;
 color:white;
 text-align:center;
 overflow-x:hidden;
 background-color:#17092f;
+
 }
 
 /* スマホ背景 */
+
 @media(max-width:768px){
 
 body{
+
 background:
 linear-gradient(
-rgba(12,5,35,.2),
-rgba(35,15,70,.4)
+rgba(10,5,30,.25),
+rgba(40,20,80,.45)
 ),
 url('EE552393-4A35-41CD-9C75-CDD9386DEA1C.png');
 
@@ -39,18 +49,21 @@ background-size:cover;
 background-position:center top;
 background-repeat:no-repeat;
 background-attachment:fixed;
+
 }
 
 }
 
 /* PC背景 */
+
 @media(min-width:769px){
 
 body{
+
 background:
 linear-gradient(
-rgba(12,5,35,.15),
-rgba(35,15,70,.35)
+rgba(10,5,30,.15),
+rgba(40,20,80,.35)
 ),
 url('4CDB24F9-160D-43C4-B7E4-F9BCB2CE237A.png');
 
@@ -58,28 +71,34 @@ background-size:cover;
 background-position:center center;
 background-repeat:no-repeat;
 background-attachment:fixed;
+
 }
 
 }
 
 .container{
-width:90%;
+
+width:92%;
 max-width:1100px;
 margin:auto;
 padding:40px 0 80px;
+
 }
 
 .hero-img{
-width:90%;
-max-width:520px;
+
+width:95%;
+max-width:620px;
+
 display:block;
 margin:auto;
 
 filter:
-drop-shadow(0 0 45px rgba(255,255,255,.9))
+drop-shadow(0 0 40px rgba(255,255,255,.9))
 drop-shadow(0 0 120px rgba(220,184,255,.8));
 
 animation:float 4s ease-in-out infinite;
+
 }
 
 @keyframes float{
@@ -89,7 +108,7 @@ transform:translateY(0px);
 }
 
 50%{
-transform:translateY(-12px);
+transform:translateY(-14px);
 }
 
 }
@@ -100,9 +119,9 @@ margin-top:15px;
 
 font-size:1rem;
 
-letter-spacing:5px;
+letter-spacing:6px;
 
-color:#f3d8ff;
+color:#f7dfff;
 
 text-shadow:
 0 0 10px #fff,
@@ -112,7 +131,7 @@ text-shadow:
 
 h1{
 
-font-size:4rem;
+font-size:4.8rem;
 
 margin-top:20px;
 
@@ -121,39 +140,62 @@ text-shadow:
 0 0 35px #dcb8ff,
 0 0 60px #dcb8ff;
 
+animation:titleGlow 4s infinite;
+
+}
+
+@keyframes titleGlow{
+
+0%,100%{
+opacity:1;
+}
+
+50%{
+opacity:.8;
+}
+
 }
 
 .english{
 
-margin-top:15px;
-
-font-size:1.1rem;
-
 letter-spacing:10px;
-
+font-size:1.1rem;
+margin-top:15px;
 opacity:.9;
 
 }
 
 .star{
 
-font-size:3rem;
+font-size:4rem;
 
 margin:40px 0;
 
 text-shadow:
 0 0 20px #fff,
-0 0 40px #dcb8ff;
+0 0 50px #dcb8ff;
+
+animation:twinkle 3s infinite;
+
+}
+
+@keyframes twinkle{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.15);
+}
 
 }
 
 .welcome{
 
-font-size:1.4rem;
-
+font-size:1.5rem;
 line-height:2;
-
-margin-bottom:60px;
+margin-bottom:70px;
 
 }
 
@@ -163,16 +205,16 @@ background:rgba(120,80,200,.15);
 
 backdrop-filter:blur(18px);
 
-border:1px solid rgba(255,255,255,.1);
+border:1px solid rgba(255,255,255,.12);
 
 border-radius:40px;
 
-padding:50px 25px;
+padding:60px 30px;
 
-margin:60px auto;
+margin:70px auto;
 
 box-shadow:
-0 0 40px rgba(220,184,255,.12);
+0 0 45px rgba(220,184,255,.15);
 
 }
 
@@ -184,15 +226,14 @@ margin-bottom:40px;
 
 text-shadow:
 0 0 15px #fff,
-0 0 30px #dcb8ff;
+0 0 35px #dcb8ff;
 
 }
 
 .profile{
 
-font-size:1.15rem;
-
-line-height:2.6;
+font-size:1.2rem;
+line-height:2.8;
 
 }
 
@@ -204,9 +245,9 @@ margin:50px auto;
 
 #musicBtn{
 
-padding:22px 60px;
+padding:24px 65px;
 
-font-size:1.15rem;
+font-size:1.2rem;
 
 font-family:'Zen Old Mincho',serif;
 
@@ -221,7 +262,7 @@ border-radius:999px;
 backdrop-filter:blur(15px);
 
 box-shadow:
-0 0 35px rgba(220,184,255,.45);
+0 0 40px rgba(220,184,255,.45);
 
 cursor:pointer;
 
@@ -234,25 +275,24 @@ transition:.3s;
 transform:translateY(-5px);
 
 box-shadow:
-0 0 50px rgba(220,184,255,.8);
+0 0 60px rgba(220,184,255,.8);
 
 }
-
 .link-btn{
 
 display:block;
 
 max-width:700px;
 
-margin:20px auto;
+margin:22px auto;
 
-padding:26px;
+padding:28px;
 
 text-decoration:none;
 
 color:white;
 
-font-size:1.3rem;
+font-size:1.35rem;
 
 background:rgba(150,100,255,.22);
 
@@ -281,29 +321,35 @@ box-shadow:
 
 margin-top:80px;
 
-opacity:.7;
-
 padding-bottom:40px;
+
+opacity:.75;
 
 }
 
 @media(max-width:768px){
 
 h1{
-font-size:3rem;
+font-size:3.8rem;
 }
 
 .section h2{
-font-size:2.2rem;
+font-size:2.3rem;
 }
 
 .profile{
 font-size:1rem;
+line-height:2.4;
+}
+
+.welcome{
+font-size:1.25rem;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -335,11 +381,13 @@ HOSHIGANE SPICA
 
 <div class="profile">
 
-配信・歌・ゲーム・雑談を中心に活動中。<br><br>
+夜空に迷い込んだラムズを導く。<br><br>
 
 少し意地悪で、少し甘やかす。<br><br>
 
-そんな「ちょい悪天使VTuber」<br>
+歌、雑談、ゲーム配信を中心に活動する。<br><br>
+
+ちょい悪天使VTuber<br>
 星鏡スピカです。
 
 </div>
@@ -362,17 +410,41 @@ HOSHIGANE SPICA
 
 <h2>LINK</h2>
 
-<a class="link-btn" href="https://youtube.com/@spica_hoshigane" target="_blank">▶ YouTube</a>
+<a class="link-btn"
+href="https://youtube.com/@spica_hoshigane"
+target="_blank">
+▶ YouTube
+</a>
 
-<a class="link-btn" href="https://web.iriam.app/s/user/QAHoReYrJj?uuid=af8f1df2" target="_blank">🎤 IRIAM</a>
+<a class="link-btn"
+href="https://web.iriam.app/s/user/QAHoReYrJj?uuid=af8f1df2"
+target="_blank">
+🎤 IRIAM
+</a>
 
-<a class="link-btn" href="https://x.com/hoshigane_spica" target="_blank">✦ X</a>
+<a class="link-btn"
+href="https://x.com/hoshigane_spica"
+target="_blank">
+✦ X
+</a>
 
-<a class="link-btn" href="https://www.tiktok.com/@hoshigane_spica" target="_blank">🎵 TikTok</a>
+<a class="link-btn"
+href="https://www.tiktok.com/@hoshigane_spica"
+target="_blank">
+🎵 TikTok
+</a>
 
-<a class="link-btn" href="https://hoshiganespica.booth.pm/" target="_blank">🛍 BOOTH</a>
+<a class="link-btn"
+href="https://hoshiganespica.booth.pm/"
+target="_blank">
+🛍 BOOTH
+</a>
 
-<a class="link-btn" href="https://marshmallow-qa.com/wcor8kzzwjwskmo" target="_blank">💌 Marshmallow</a>
+<a class="link-btn"
+href="https://marshmallow-qa.com/wcor8kzzwjwskmo"
+target="_blank">
+💌 Marshmallow
+</a>
 
 </div>
 
@@ -384,20 +456,27 @@ HOSHIGANE SPICA
 
 <script>
 
-const bgm=document.getElementById('bgm');
-const btn=document.getElementById('musicBtn');
+const bgm =
+document.getElementById('bgm');
+
+const btn =
+document.getElementById('musicBtn');
 
 function toggleMusic(){
 
 if(bgm.paused){
 
 bgm.play();
-btn.innerHTML='✦ MUSIC STOP ✦';
+
+btn.innerHTML =
+'✦ MUSIC STOP ✦';
 
 }else{
 
 bgm.pause();
-btn.innerHTML='✦ STARLIGHT MUSIC ✦';
+
+btn.innerHTML =
+'✦ STARLIGHT MUSIC ✦';
 
 }
 
