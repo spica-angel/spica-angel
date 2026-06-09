@@ -16,8 +16,7 @@ scroll-behavior:smooth;
 }
 body{
 font-family:"Times New Roman",serif;
-background:
-linear-gradient(
+background:linear-gradient(
 180deg,
 #050509 0%,
 #120d1d 45%,
@@ -48,9 +47,11 @@ padding:40px 20px;
 }
 .character{
 width:min(90vw,650px);
+display:block;
+margin:auto;
 filter:
-drop-shadow(0 0 30px rgba(255,255,255,.45))
-drop-shadow(0 0 70px rgba(255,180,220,.35));
+drop-shadow(0 0 25px rgba(255,255,255,.5))
+drop-shadow(0 0 60px rgba(255,180,220,.4));
 animation:float 6s ease-in-out infinite;
 }
 @keyframes float{
@@ -59,6 +60,7 @@ animation:float 6s ease-in-out infinite;
 }
 h1{
 font-size:clamp(60px,10vw,120px);
+margin-top:20px;
 text-shadow:
 0 0 15px rgba(255,255,255,.8),
 0 0 45px rgba(255,180,220,.4);
@@ -117,14 +119,11 @@ display:block;
 padding:20px;
 text-align:center;
 border-radius:999px;
-background:rgba(255,255,255,.06);
-border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
 color:white;
 text-decoration:none;
-transition:.3s;
-}
-.link-btn:hover{
-transform:translateY(-3px);
+font-size:20px;
 }
 iframe{
 width:100%;
@@ -135,7 +134,6 @@ border-radius:20px;
 footer{
 text-align:center;
 padding:80px 20px;
-opacity:.8;
 }
 @media(max-width:768px){
 .news-grid{
@@ -237,51 +235,15 @@ Posts by Hoshigane Spica
 </section>
 <section class="card">
 <h2>✦ LINK ✦</h2>
-
 <div class="links">
 
-<a class="link-btn"
-href="https://youtube.com/@spica_hoshigane"
-target="_blank">
 ▶ YouTube
-</a>
-
-<a class="link-btn"
-href="https://web.iriam.app/"
-target="_blank">
 🎤 IRIAM
-</a>
-
-<a class="link-btn"
-href="https://x.com/hoshigane_spica"
-target="_blank">
 ✦ X
-</a>
-
-<a class="link-btn"
-href="https://www.tiktok.com/@hoshigane_spica"
-target="_blank">
 🎵 TikTok
-</a>
-
-<a class="link-btn"
-href="https://hoshiganespica.booth.pm/"
-target="_blank">
 🛍 BOOTH
-</a>
-
-<a class="link-btn"
-href="https://marshmallow-qa.com/wcor8kzzwjwskmo"
-target="_blank">
 💌 Marshmallow
-</a>
-
-<a class="link-btn"
-href="https://gi-pt.com/main/wishlist/fan-view/3a218f3a-9728-44a8-a94d-6db3e871af46"
-target="_blank">
 🎁 Wish List
-</a>
-
 </div>
 </section>
 <footer>
