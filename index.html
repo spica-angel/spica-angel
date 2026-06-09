@@ -1,534 +1,315 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>星鏡スピカ</title>
-
+<title>星鏡スピカ | Official Site</title>
+<script async src="https://platform.twitter.com/widgets.js"></script>
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
-
 html{
 scroll-behavior:smooth;
 }
-
 body{
-
-font-family:
-"Times New Roman",
-serif;
-
+font-family:"Times New Roman",serif;
+background:
+linear-gradient(
+180deg,
+#040408 0%,
+#120d1d 45%,
+#1f1230 100%
+);
 color:white;
-
 overflow-x:hidden;
-
-position:relative;
-
 }
-
-/* 背景 */
-
 body::before{
-
 content:"";
-
 position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-z-index:-2;
-
-transform:scale(1.03);
-
-filter:blur(3px);
-
-}
-
-@media(max-width:768px){
-
-body::before{
-
+inset:0;
+pointer-events:none;
 background:
-linear-gradient(
-rgba(15,5,35,.25),
-rgba(55,20,95,.35)
-),
-url('EE552393-4A35-41CD-9C75-CDD9386DEA1C.png');
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
+radial-gradient(circle at 20% 20%,rgba(212,140,255,.08),transparent 25%),
+radial-gradient(circle at 80% 30%,rgba(255,180,220,.05),transparent 25%),
+radial-gradient(circle at 50% 80%,rgba(230,196,255,.08),transparent 30%);
+z-index:-1;
 }
-
-}
-
-@media(min-width:769px){
-
-body::before{
-
-background:
-linear-gradient(
-rgba(15,5,35,.20),
-rgba(55,20,95,.30)
-),
-url('4CDB24F9-160D-43C4-B7E4-F9BCB2CE237A.png');
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
-}
-
-}
-
-.container{
-
-max-width:1000px;
-margin:auto;
-
-}
-
 .hero{
-
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-
-padding-top:40px;
-padding-bottom:80px;
-
+padding:40px 20px;
 }
-
-/* キャラ */
-
 .character{
-
-display:block;
-
-width:88%;
-max-width:650px;
-
-margin:auto;
-
-position:relative;
-z-index:5;
-
+width:min(90vw,650px);
 filter:
-drop-shadow(0 0 20px rgba(255,255,255,.8))
-drop-shadow(0 0 60px rgba(220,184,255,.7));
-
-animation:
-floatCharacter 5s ease-in-out infinite;
-
+drop-shadow(0 0 30px rgba(255,255,255,.45))
+drop-shadow(0 0 70px rgba(212,140,255,.4));
+animation:float 6s ease-in-out infinite;
 }
-
-@keyframes floatCharacter{
-
+@keyframes float{
 0%,100%{
-transform:translateY(0px);
+transform:translateY(0);
 }
-
 50%{
-transform:translateY(-10px);
+transform:translateY(-15px);
 }
-
 }
-  .affiliation{
-
-margin-top:30px;
-
-font-size:18px;
-
-letter-spacing:6px;
-
-color:rgba(255,255,255,.88);
-
-}
-
-.name{
-
-font-size:clamp(54px,10vw,110px);
-
-margin-top:35px;
-
-font-weight:700;
-
-text-shadow:
-0 0 12px rgba(255,255,255,.95),
-0 0 35px rgba(220,184,255,.8);
-
-}
-
-.roman{
-
+h1{
+font-size:clamp(60px,10vw,120px);
 margin-top:20px;
-
-font-size:24px;
-
-letter-spacing:8px;
-
-color:rgba(255,255,255,.92);
-
-}
-
-.star{
-
-font-size:70px;
-
-margin:55px 0;
-
 text-shadow:
-0 0 20px rgba(255,255,255,.8);
-
+0 0 15px rgba(255,255,255,.8),
+0 0 40px rgba(212,140,255,.4);
 }
-
-.catchcopy{
-
-font-size:36px;
-
-margin-bottom:30px;
-
-}
-
-.welcome{
-
-font-size:28px;
-
-margin-bottom:80px;
-
-}
-
-.card{
-
-margin:40px 20px;
-
-padding:45px 25px;
-
-border-radius:35px;
-
-background:
-rgba(255,255,255,.10);
-
-backdrop-filter:blur(12px);
--webkit-backdrop-filter:blur(12px);
-
-border:
-1px solid rgba(255,255,255,.15);
-
-box-shadow:
-0 0 30px rgba(220,184,255,.15);
-
-}
-
-.section-title{
-
-text-align:center;
-
-font-size:52px;
-
-margin-bottom:40px;
-
-text-shadow:
-0 0 12px rgba(255,255,255,.8);
-
-}
-
-.profile-text{
-
-text-align:center;
-
-font-size:26px;
-
-line-height:2;
-
-}
-
-.divider{
-
-width:80%;
-
-height:1px;
-
-margin:40px auto;
-
-background:
-rgba(255,255,255,.15);
-
-}
-
-.fanname{
-
-text-align:center;
-
-font-size:26px;
-
-line-height:2;
-
-}
-  .music-btn,
-.link-btn{
-
-display:block;
-
-width:85%;
-
-margin:20px auto;
-
-padding:24px;
-
-border-radius:999px;
-
-text-decoration:none;
-
-text-align:center;
-
-font-size:24px;
-
-color:white;
-
-background:
-rgba(255,255,255,.10);
-
-border:
-1px solid rgba(255,255,255,.15);
-
-backdrop-filter:blur(10px);
-
-box-shadow:
-0 0 20px rgba(220,184,255,.12);
-
-transition:.3s;
-
-}
-
-.music-btn:hover,
-.link-btn:hover{
-
-transform:translateY(-3px);
-
-box-shadow:
-0 0 40px rgba(220,184,255,.35);
-
-}
-
-.footer{
-
-text-align:center;
-
-padding:80px 20px;
-
-line-height:2;
-
-font-size:20px;
-
-}
-
-.footer-title{
-
-font-size:28px;
-
-margin-bottom:20px;
-
-}
-
-@media(max-width:768px){
-
-.name{
-font-size:56px;
-}
-
 .roman{
-font-size:16px;
-letter-spacing:4px;
+margin-top:15px;
+letter-spacing:8px;
+color:#dccbff;
 }
-
-.catchcopy{
+.subtitle{
+margin-top:25px;
+font-size:26px;
+}
+.tagline{
+margin-top:25px;
 font-size:22px;
+line-height:1.8;
 }
-
-.welcome{
-font-size:18px;
+.card{
+width:min(1000px,92%);
+margin:40px auto;
+padding:45px 30px;
+border-radius:30px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.08);
+box-shadow:
+0 0 30px rgba(212,140,255,.08);
 }
-
-.section-title{
-font-size:38px;
+.card h2{
+text-align:center;
+font-size:42px;
+margin-bottom:30px;
 }
-
-.profile-text{
-font-size:18px;
-}
-
-.fanname{
+.card p{
+text-align:center;
+line-height:2;
 font-size:20px;
 }
-
-.music-btn,
-.link-btn{
-font-size:18px;
-padding:20px;
+.news-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
-
+.news-box{
+padding:25px;
+border-radius:20px;
+background:rgba(255,255,255,.04);
+text-align:center;
 }
-
+iframe{
+width:100%;
+height:600px;
+border:none;
+border-radius:20px;
+}
+.hero-spacer{
+height:20px;
+}
 </style>
-
 </head>
-
 <body>
-
-<div class="container">
-
 <section class="hero">
-
-<img src="IMG_5845.png" class="character">
-
-<div class="affiliation">
-✦ LOCUS MEUS 所属 ✦
-</div>
-
-<h1 class="name">
-星鏡スピカ
-</h1>
-
+<h1>星鏡スピカ</h1>
 <div class="roman">
 HOSHIGANE SPICA
 </div>
-
-<div class="star">
-✦
-</div>
-
-<div class="catchcopy">
+<div class="subtitle">
 ✦ Angel VTuber ✦
 </div>
-
-<div class="welcome">
-ラムズのみんな、ようこそ
-</div>
-
-</section>
-
-<section class="card">
-
-<h2 class="section-title">
-PROFILE
-</h2>
-
-<div class="profile-text">
-
+<div class="tagline">
 星々の光に導かれながら、<br>
-歌・雑談・ゲームを届ける天使VTuber。<br><br>
+今日もあなたの帰る場所になる。
+</div>
+</section>
+<section class="card">
+<h2>✦ NEWS ✦</h2>
+<div class="news-grid">
+<div class="news-box">
+最新動画はYouTubeで公開中
+</div>
+<div class="news-box">
+最新情報はXで更新中
+</div>
+<div class="news-box">
+IRIAMでも配信中
+</div>
+</div>
+</section>
+<section class="card">
+<h2>✦ PROFILE ✦</h2>
+<p>
 
-少しおっちょこちょいで、<br>
-少し甘やかし上手。<br><br>
+星々の光に導かれながら、
+歌・雑談・ゲームを届ける天使VTuber。
 
-ラムズのみんなが安心して帰ってこられる場所を<br>
+少しおっちょこちょいで、
+少し甘やかし上手。
+
+ラムズのみんなが安心して帰ってこられる場所を
 今日も作っています。
 
+</p>
+</section>
+<section class="card">
+<h2>✦ MOVIE ✦</h2>
+<p style="margin-bottom:25px;">
+
+最新の動画・ライブ配信はこちら
+
+</p>
+<iframe
+src="https://www.youtube.com/embed/videoseries?list=UU"
+allowfullscreen>
+</iframe>
+<div style="text-align:center;">
+
+▶ YouTube Channel
+
+</a>
 </div>
+</section>
+<section class="card">
+<h2>✦ STAR LOG ✦</h2>
 
-<div class="divider"></div>
+Posts by Hoshigane Spica
 
-<div class="fanname">
+</a>
+</section>
+<section class="card">
+<h2>✦ COMMUNITY ✦</h2>
+<p>
 
-✦ FAN NAME ✦<br><br>
+✦ FAN NAME ✦
 
-ラムズ<br><br>
+ラムズ
 
-#鏡の中のスピカ<br>
+✦ HASHTAG ✦
+
+#鏡の中のスピカ
+
+<br>
+
 #MirrorOfSpica
 
-</div>
-
+</p>
 </section>
-
-<button id="musicBtn" class="music-btn" onclick="toggleMusic()">
-✦ STARLIGHT MUSIC ✦
-</button>
-
-<audio id="bgm" loop>
-<source src="bgm.mp3" type="audio/mpeg">
-</audio>
-
+<style>
+.links{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+.link-btn{
+display:block;
+text-align:center;
+padding:20px;
+border-radius:999px;
+text-decoration:none;
+color:white;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+transition:.3s;
+}
+.link-btn:hover{
+transform:translateY(-3px);
+box-shadow:
+0 0 30px rgba(212,140,255,.2);
+}
+footer{
+text-align:center;
+padding:80px 20px;
+opacity:.8;
+}
+@media(max-width:768px){
+.news-grid{
+grid-template-columns:1fr;
+}
+.links{
+grid-template-columns:1fr;
+}
+.card h2{
+font-size:30px;
+}
+.card p{
+font-size:18px;
+}
+iframe{
+height:320px;
+}
+}
+</style>
 <section class="card">
+<h2>✦ LINK ✦</h2>
+<div class="links">
 
-<h2 class="section-title">
-LINK
-</h2>
+▶ YouTube
 
-<a class="link-btn" href="https://youtube.com/@spica_hoshigane" target="_blank">▶ YouTube</a>
+</a>
 
-<a class="link-btn" href="https://web.iriam.app/s/user/QAHoReYrJj?uuid=af8f1df2" target="_blank">🎤 IRIAM</a>
+🎤 IRIAM
 
-<a class="link-btn" href="https://x.com/hoshigane_spica" target="_blank">✦ X</a>
+</a>
 
-<a class="link-btn" href="https://www.tiktok.com/@hoshigane_spica" target="_blank">🎵 TikTok</a>
+✦ X
 
-<a class="link-btn" href="https://hoshiganespica.booth.pm/" target="_blank">🛍 BOOTH</a>
+</a>
 
-<a class="link-btn" href="https://gi-pt.com/main/wishlist/fan-view/3a218f3a-9728-44a8-a94d-6db3e871af46" target="_blank">🎁 ラムズからの贈り物 🎁</a>
+🎵 TikTok
 
-<a class="link-btn" href="https://marshmallow-qa.com/wcor8kzzwjwskmo" target="_blank">💌 Marshmallow</a>
+</a>
 
+🛍 BOOTH
+
+</a>
+
+💌 Marshmallow
+
+</a>
+
+🎁 Wish List
+
+</a>
+</div>
 </section>
+<footer>
+<h3>
 
-<footer class="footer">
-
-<div class="footer-title">
 ✦ Thank you Lambs ✦
-</div>
 
-<div>
-May the stars guide your way.
-</div>
-
+</h3>
 <br>
+<div>
 
+May the stars guide your way.
+
+</div>
+<br>
 <div>#鏡の中のスピカ</div>
 <div>#MirrorOfSpica</div>
-
 <br>
-
 <div>
+
 © Hoshigane Spica
-</div>
 
+</div>
 </footer>
-
-</div>
-
-<script>
-
-const bgm=document.getElementById("bgm");
-const btn=document.getElementById("musicBtn");
-
-function toggleMusic(){
-
-if(bgm.paused){
-
-bgm.play();
-btn.innerHTML="✦ MUSIC STOP ✦";
-
-}else{
-
-bgm.pause();
-btn.innerHTML="✦ STARLIGHT MUSIC ✦";
-
-}
-
-}
-
-</script>
-
 </body>
 </html>
