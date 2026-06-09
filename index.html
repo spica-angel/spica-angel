@@ -14,119 +14,9 @@ box-sizing:border-box;
 html{
 scroll-behavior:smooth;
 }
-body{
-font-family:"Times New Roman",serif;
-background:
-linear-gradient(
-180deg,
-#040408 0%,
-#120d1d 45%,
-#1f1230 100%
-);
-color:white;
-overflow-x:hidden;
-}
-body::before{
-content:"";
-position:fixed;
-inset:0;
-pointer-events:none;
-background:
-radial-gradient(circle at 20% 20%,rgba(212,140,255,.08),transparent 25%),
-radial-gradient(circle at 80% 30%,rgba(255,180,220,.05),transparent 25%),
-radial-gradient(circle at 50% 80%,rgba(230,196,255,.08),transparent 30%);
-z-index:-1;
-}
-.hero{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px 20px;
-}
-.character{
-width:min(90vw,650px);
-filter:
-drop-shadow(0 0 30px rgba(255,255,255,.45))
-drop-shadow(0 0 70px rgba(212,140,255,.4));
-animation:float 6s ease-in-out infinite;
-}
-@keyframes float{
-0%,100%{
-transform:translateY(0);
-}
-50%{
-transform:translateY(-15px);
-}
-}
-h1{
-font-size:clamp(60px,10vw,120px);
-margin-top:20px;
-text-shadow:
-0 0 15px rgba(255,255,255,.8),
-0 0 40px rgba(212,140,255,.4);
-}
-.roman{
-margin-top:15px;
-letter-spacing:8px;
-color:#dccbff;
-}
-.subtitle{
-margin-top:25px;
-font-size:26px;
-}
-.tagline{
-margin-top:25px;
-font-size:22px;
-line-height:1.8;
-}
-.card{
-width:min(1000px,92%);
-margin:40px auto;
-padding:45px 30px;
-border-radius:30px;
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.08);
-box-shadow:
-0 0 30px rgba(212,140,255,.08);
-}
-.card h2{
-text-align:center;
-font-size:42px;
-margin-bottom:30px;
-}
-.card p{
-text-align:center;
-line-height:2;
-font-size:20px;
-}
-.news-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
-.news-box{
-padding:25px;
-border-radius:20px;
-background:rgba(255,255,255,.04);
-text-align:center;
-}
-iframe{
-width:100%;
-height:600px;
-border:none;
-border-radius:20px;
-}
-.hero-spacer{
-height:20px;
-}
-</style>
-</head>
 <body>
 <section class="hero">
+<img src="copy_EAF2754A-2973-4A0A-835E-65B3B61F5992.png" class="character">
 <h1>星鏡スピカ</h1>
 <div class="roman">
 HOSHIGANE SPICA
@@ -138,6 +28,35 @@ HOSHIGANE SPICA
 星々の光に導かれながら、<br>
 今日もあなたの帰る場所になる。
 </div>
+</section>
+<section class="card">
+<h2>✦ NEWS ✦</h2>
+<div class="news-grid">
+<div class="news-box">
+YouTube更新中
+</div>
+<div class="news-box">
+X更新中
+</div>
+<div class="news-box">
+IRIAM配信中
+</div>
+</div>
+</section>
+<section class="card">
+<h2>✦ PROFILE ✦</h2>
+<p>
+
+星々の光に導かれながら、
+歌・雑談・ゲームを届ける天使VTuber。
+
+少しおっちょこちょいで、
+少し甘やかし上手。
+
+ラムズのみんなが安心して帰ってこられる場所を
+今日も作っています。
+
+</p>
 </section>
 <section class="card">
 <h2>✦ NEWS ✦</h2>
