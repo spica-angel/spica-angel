@@ -195,7 +195,8 @@ HOSHIGANE SPICA
 配信中ならライブが表示されます
 </p>
 <iframe
-src="https://www.youtube.com/embed/live_stream?channel=UCJzOL9EyZJA-KqLi97Mw5Zw"
+id="latest-video"
+src=""
 allowfullscreen>
 </iframe>
 </section>
@@ -259,5 +260,46 @@ May the stars guide your way.
 © Hoshigane Spica
 </div>
 </footer>
+  <script>
+const API_KEY = "ここに自分のAPIキー";
+const CHANNEL_ID = "UCJzOL9EyZJA-KqLi97Mw5Zw";
+
+async function loadYouTubeData() {
+  try {
+
+    const channelRes = await fetch(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`
+    );
+    const channelData = await channelRes.json();
+
+    const subs =
+      channelData.items?.[0]?.statistics?.subscriberCount || "404";
+
+    const subElement = document.getElementById("subscribers");
+    if(subElement){
+      subElement.textContent =
+        Number(subs).toLocaleString() + " Subscribers";
+    }
+
+    const videoRes = await fetch(
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&maxResults=1&order=date&type=video&key=${API_KEY}`
+    );
+
+    const videoData = await videoRes.json();
+
+    const videoId = videoData.items?.[0]?.id?.videoId;
+
+    if(videoId){
+      document.getElementById("latest-video").src =
+        `https://www.youtube.com/embed/${videoId}`;
+    }
+
+  } catch(err){
+    console.log(err);
+  }
+}
+
+loadYouTubeData();
+</script>
 </body>
 </html>
